@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    /* CSS Variables */
+    --section-padding-mobile: 0 0 80px 0;
+    --section-padding-desktop: 0 0 100px 0;
+    --section-title-size-mobile: 2rem;
+    --section-title-size-desktop: 3rem;
+    --section-title-color: #a0a0a0;
+    --section-title-weight: 600;
+    --section-title-line-height: 1.1;
+    --section-title-margin-bottom: 40px;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

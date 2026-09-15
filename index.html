@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script>
+			(function () {
+				const stored = localStorage.getItem("theme");
+				const prefersDark = window.matchMedia(
+					"(prefers-color-scheme: dark)",
+				).matches;
+				const theme = stored || (prefersDark ? "dark" : "light");
+				document.documentElement.dataset.theme = theme;
+			})();
+		</script><meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/png" href="/img/Amber%20Logo-08.png">
+		<link rel="stylesheet" href="/styles/index.css">
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+		<title>Amber Laboratory | Fire Material Testing</title>
+		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script><script>(function(){const showLoader = true;
+
+			if (showLoader && sessionStorage.getItem("HasVisited") === "true") {
+				document.documentElement.classList.add("loader-hidden");
+			}
+		})();</script><style>.person-card[data-astro-cid-rvbyvrvq] {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  gap: 2rem;
+}
+
+.person-card[data-astro-cid-rvbyvrvq]:last-child {
+  border-bottom: none;
+}
+
+.person-image[data-astro-cid-rvbyvrvq] {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.person-image[data-astro-cid-rvbyvrvq] img[data-astro-cid-rvbyvrvq] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-info[data-astro-cid-rvbyvrvq] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.person-name[data-astro-cid-rvbyvrvq] {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.person-affiliation[data-astro-cid-rvbyvrvq] {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+@media (width <= 640px) {
+  .person-info[data-astro-cid-rvbyvrvq] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+  }
+
+  .person-affiliation[data-astro-cid-rvbyvrvq] {
+    text-align: left;
+  }
+}
+/*$vite$:1*/</style></head>
+	<body>
+		<div id="loading-screen">
+					<div class="loader-content">
+						<img src="/img/footer-logo.png" alt="Amber Laboratory" class="loader-logo">
+
+						<div class="loading-bar">
+							<div class="bar-fill"></div>
+						</div>
+					</div>
+				</div>
+
+		<div class="cursor-dot"></div>
+		<div class="cursor-ring"></div>
+
+		<header class="site-header">
+    <nav class="container navbar">
+        <a href="/" class="navbar-brand">
+            <img src="/img/logo.png" alt="Amber Laboratory Logo" class="logo-dark">
+            <img src="/img/logo-dark.png" alt="Amber Laboratory Logo" class="logo-light">
+        </a>
+
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+            <i class="ri-menu-3-fill"></i>
+        </button>
+
+        <ul class="navbar-nav" id="navbar-menu">
+            <li>
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li>
+                <a href="/about-us" class="nav-link">About Us</a>
+            </li>
+            <li>
+                <a href="/services" class="nav-link">Services</a>
+            </li>
+            <li>
+                <a href="/consultancy" class="nav-link">Consultancy</a>
+            </li>
+            <li>
+                <a href="/conference" class="nav-link">News & Blog</a>
+            </li>
+            <li>
+                <a href="/contact-us" class="nav-link">Contact</a>
+            </li>
+            <li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="ri-sun-line"></i>
+                    <i class="ri-moon-line"></i>
+                </button>
+            </li>
+            <li>
+                <a href="/login" class="nav-link">
+                    <i class="ri-user-line user-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script type="module">//#region src/components/shared/Navbar.astro?astro&type=script&index=0&lang.ts
+document.getElementById("theme-toggle")?.addEventListener("click", () => {
+	const next = (document.documentElement.dataset.theme || "dark") === "dark" ? "light" : "dark";
+	document.documentElement.dataset.theme = next;
+	localStorage.setItem("theme", next);
+});
+var menuToggle = document.getElementById("menu-toggle");
+var navbarMenu = document.getElementById("navbar-menu");
+menuToggle?.addEventListener("click", () => {
+	navbarMenu?.classList.toggle("active");
+	const icon = menuToggle.querySelector("i");
+	if (navbarMenu?.classList.contains("active")) icon?.classList.replace("ri-menu-3-fill", "ri-close-line");
+	else icon?.classList.replace("ri-close-line", "ri-menu-3-fill");
+});
+//#endregion</script>
+
+		<main>
+			
+  <section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title anim-hidden">
+                Trusted Material Testing aligned with Global Fire Safety
+                Standards.
+            </h1>
+            <p class="hero-description anim-hidden">
+                We test and certify your materials to meet the highest fire
+                safety compliance
+            </p>
+        </div>
+
+        <div class="hero-ecosystem">
+            <ul class="ecosystem-list">
+                <li class="ecosystem-item anim-hidden">
+                    Materials & Assemblies Testing for Fire Resistance
+                </li>
+                <li class="ecosystem-item anim-hidden">Training & Education</li>
+                <li class="ecosystem-item anim-hidden">
+                    Research, Development, and Innovation
+                </li>
+                <li class="ecosystem-item anim-hidden">Consultancy</li>
+            </ul>
+            <a href="/contact-us" class="btn hero-contact-btn anim-hidden">
+            
+                Contact Us <i class="ri-arrow-right-s-line"></i>
+            
+        </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    const { animate, stagger } = Motion;
+
+    function initHeroAnimations() {
+        animate(
+            ".hero-title",
+            { opacity: [0, 1], y: [20, 0] },
+            { duration: 0.8, easing: "ease-out", delay: 0.2 },
+        );
+
+        animate(
+            ".hero-description",
+            { opacity: [0, 1], y: [20, 0] },
+            { duration: 0.8, easing: "ease-out", delay: 0.4 },
+        );
+
+        animate(
+            ".ecosystem-list",
+            { "--line-opacity": [0, 1] },
+            { duration: 0.6, easing: "ease-out" },
+        );
+
+        animate(
+            ".ecosystem-item",
+            { opacity: [0, 1], y: [20, 0] },
+            {
+                duration: 0.6,
+                easing: "ease-out",
+                delay: stagger(0.1, { from: "first" }),
+            },
+        );
+
+        animate(
+            ".hero-contact-btn",
+            { opacity: [0, 1], y: [20, 0] },
+            { duration: 0.6, easing: "ease-out", delay: 1.2 },
+        );
+    }
+    if (!sessionStorage.getItem("HasVisited")) {
+        setTimeout(initHeroAnimations, 3300);
+    } else {
+        if (document.readyState === "complete") {
+            initHeroAnimations();
+        } else {
+            window.addEventListener("load", initHeroAnimations);
+        }
+    }
+</script>
+  <section class="vision-mission-section">
+    <div class="container" style="padding-top: 4rem;">
+        <div class="vm-block">
+            <h2 class="vm-title section-title-std">Our Vision</h2>
+            <p class="vm-text">
+                To be a globally recognized center of excellence in fire
+                testing, fire engineering, driving innovation in fire-resilient
+                materials and systems to enable safer, more sustainable, and
+                future-proof built environments.
+            </p>
+        </div>
+
+        <div class="vm-divider section-divider anim-hidden"></div>
+
+        <div class="vm-block">
+            <h2 class="vm-title section-title-std">Our Mission</h2>
+            <p class="vm-text">
+                To deliver value through internationally competitive fire
+                resistance material testing, expert fire engineering
+                consultancy, comprehensive training and education, and
+                research-driven innovation supporting regulatory compliance,
+                advancing fire safety, and protecting life, property, and the
+                built environment.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    const { inView, animate } = Motion;
+
+    inView(
+        ".vm-divider",
+        (el) => {
+            animate(
+                el,
+                { opacity: [0, 1], x: [200, 0] },
+                { duration: 1.5, easing: "ease-out" },
+            );
+        },
+        { amount: 0.2 },
+    );
+</script>
+  <section class="home-video-section">
+    <div class="container">
+        <div class="video-container">
+            <video id="lazy-video" class="video-player" controls muted loop playsinline preload="none">
+                <source src="/video/Amber%20Lab%20Final%20Video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+<script type="module">//#region src/components/sections/home/HomeVideo.astro?astro&type=script&index=0&lang.ts
+var video = document.getElementById("lazy-video");
+if (video) {
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				video.play().catch((error) => {
+					console.log("Autoplay was prevented:", error);
+				});
+				observer.unobserve(video);
+			}
+		});
+	}, { threshold: .25 });
+	observer.observe(video);
+}
+//#endregion</script>
+  <section class="certifications-section">
+    <div class="container">
+        <div class="cert-block">
+            <h2 class="cv-title section-title-std">Certifications & Standards</h2>
+        </div>
+    </div>
+
+    <div class="cert-logos-banner">
+        <div class="container marquee-wrapper">
+            <div class="marquee-track">
+                <img src="/img/iso-2-1-logo-png-transparent.png" alt="ISO" class="cert-logo">
+                <img src="/img/es-01.png" alt="European Standards" class="cert-logo">
+                <img src="/img/en-logo.png" alt="European Norms" class="cert-logo">
+                <img src="/img/bsi.png" alt="BS British Standards" class="cert-logo">
+                <img src="/img/astm.png" alt="ASTM" class="cert-logo">
+
+                <img src="/img/iso-2-1-logo-png-transparent.png" alt="ISO" class="cert-logo">
+                <img src="/img/es-01.png" alt="European Standards" class="cert-logo">
+                <img src="/img/en-logo.png" alt="European Norms" class="cert-logo">
+                <img src="/img/bsi.png" alt="BS British Standards" class="cert-logo">
+                <img src="/img/astm.png" alt="ASTM" class="cert-logo">
+            </div>
+        </div>
+    </div>
+</section>
+  <section class="values-section">
+    <div class="container">
+        <div class="values-block">
+            <h2 class="cv-title section-title-std">Core Values</h2>
+
+            <div class="values-list">
+                <div class="value-item">
+                            <h3 class="value-head">
+                                Independence &amp; Impartiality
+                                <span class="toggle-icon">+</span>
+                            </h3>
+                            <p class="value-desc">Maintaining objectivity, ethics, and credibility across all services.</p>
+                        </div><div class="value-item">
+                            <h3 class="value-head">
+                                Technical Excellence
+                                <span class="toggle-icon">+</span>
+                            </h3>
+                            <p class="value-desc">Delivering high standards of competence through validated methods and compliance with internationally recognized standards.</p>
+                        </div><div class="value-item">
+                            <h3 class="value-head">
+                                Integrity &amp; Accountability
+                                <span class="toggle-icon">+</span>
+                            </h3>
+                            <p class="value-desc">Acting with honesty, transparency, and responsibility in all we do.</p>
+                        </div><div class="value-item">
+                            <h3 class="value-head">
+                                Safety First
+                                <span class="toggle-icon">+</span>
+                            </h3>
+                            <p class="value-desc">Prioritizing life safety in testing, design, consultancy, training, and innovation.</p>
+                        </div><div class="value-item">
+                            <h3 class="value-head">
+                                Knowledge &amp; Capability Building
+                                <span class="toggle-icon">+</span>
+                            </h3>
+                            <p class="value-desc">Advancing industry skills and continuous professional development through education, training, and collaboration.</p>
+                        </div><div class="value-item">
+                            <h3 class="value-head">
+                                Purpose-Driven Innovation
+                                <span class="toggle-icon">+</span>
+                            </h3>
+                            <p class="value-desc">Creating practical, reliable solutions for real-world fire safety challenges.</p>
+                        </div><div class="value-item">
+                            <h3 class="value-head">
+                                Client &amp; Industry Partnership
+                                <span class="toggle-icon">+</span>
+                            </h3>
+                            <p class="value-desc">Building trust and value through collaborative, confidential engagement.</p>
+                        </div><div class="value-item">
+                            <h3 class="value-head">
+                                Continuous Improvement
+                                <span class="toggle-icon">+</span>
+                            </h3>
+                            <p class="value-desc">Enhancing our people, systems, and technology to lead in fire safety.</p>
+                        </div>
+            </div>
+        </div>
+
+        <div class="cv-divider section-divider anim-hidden"></div>
+    </div>
+</section>
+
+<script>
+    const { inView, animate } = Motion;
+
+    inView(
+        ".cv-divider",
+        (el) => {
+            animate(
+                el,
+                { opacity: [0, 1], x: [200, 0] },
+                { duration: 1.5, easing: "ease-out" },
+            );
+        },
+        { amount: 0.2 },
+    );
+</script>
+
+<script type="module">//#region src/components/sections/home/CoreValues.astro?astro&type=script&index=0&lang.ts
+var valueItems = document.querySelectorAll(".value-item");
+valueItems.forEach((item) => {
+	item.addEventListener("click", () => {
+		if (window.innerWidth >= 992) return;
+		const isActive = item.classList.contains("active");
+		valueItems.forEach((i) => i.classList.remove("active"));
+		if (!isActive) item.classList.add("active");
+	});
+});
+//#endregion</script>
+  <section class="services">
+    <div class="container">
+        <h2 class="section-title-std">All Services</h2>
+
+        <div class="services-list">
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>An Integrated Fire Safety Ecosystem</h3>
+                    <p>
+                        Sri Lanka’s First Standard Fire Resistance Testing
+                        Laboratory, offering end-to-end fire safety solutions.
+                    </p>
+                </div>
+                <img src="/img/services/an-integrated-fire-safety-ecosystem.jpg" alt="An Integrated Fire Safety Ecosystem">
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Materials & Assemblies Testing for Fire Resistance</h3>
+                    <p>
+                        We operate an advanced, internationally compliant
+                        fire-resistance testing facility, providing
+                        certification in accordance with recognized
+                        international standards.
+                    </p>
+                </div>
+                <img src="/img/services/materials-assemblies-testing-for-fire-resistance.png" alt="Materials &amp; Assemblies Testing for Fire Resistance">
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Training & Education</h3>
+                    <p>
+                        Together with our education partners, we deliver a
+                        unique suite of training and education experiences
+                        tailored for young people, educators, industry &
+                        government professionals, and the wider community.
+                    </p>
+                </div>
+
+                <img src="/img/services/training-education.png" alt="Training &amp; Education">
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Research, Development, and Innovation</h3>
+                    <p>
+                        We provide specialised research and innovation services
+                        to support the development, optimisation, and validation
+                        of fire-resistance materials, systems, and assemblies.
+                    </p>
+                </div>
+
+                <img src="/img/services/research-development-innovation.png" alt="Research, Development, and Innovation">
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Consultancy</h3>
+                    <p>
+                        We provide independent and objective Fire Engineering
+                        Consultancy services, delivering innovative solutions
+                        that meet or exceed required levels of fire safety,
+                        property protection, and regulatory compliance while
+                        maintaining cost efficiency and design flexibility.
+                    </p>
+                </div>
+
+                <img src="/img/services/consultancy.jpg" alt="Consultancy">
+            </div>
+        </div>
+    </div>
+</section>
+
+		</main>
+
+		<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col logo-col">
+        <a href="/" class="footer-logo-link">
+          <img src="/img/footer-logo.png" alt="Amber Laboratory" class="footer-logo logo-dark">
+          <img src="/img/footer-logo-dark.png" alt="Amber Laboratory" class="footer-logo logo-light">
+        </a>
+        <p class="footer-company-name">Amber Laboratory (Pvt) Ltd</p>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <i class="ri-phone-fill"></i>
+            <a href="tel:+94705401900">+94 70 540 1900</a>
+          </li>
+          <li>
+            <i class="ri-mail-line"></i>
+            <a href="mailto: info@amber-laboratory.com">
+              info@amber-laboratory.com</a>
+          </li>
+          <li>
+            <i class="ri-map-pin-line"></i>
+            <span>399/8 Colvin Perera Mawatha, Samagi Mawatha, Hokandara South,
+              Hokandara.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h3>Stay Updated!</h3>
+        <form class="newsletter-form" action="#" method="POST">
+          <input type="email" placeholder="Your Email Address..." required>
+          <button type="submit" aria-label="Subscribe">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </form>
+
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="#" aria-label="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-middle">
+      <a href="/careers" class="gold-link">Careers</a>
+      <a href="/conference" class="gold-link">Conference</a>
+      <a href="/testing-portal" class="gold-link">Testing Portal</a>
+      <a href="/student-portal" class="gold-link">Student Portal</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/contact-us">Contact Us</a>
+      </div>
+      <p class="copyright-text">
+        &copy; 2026 Ardent Hive, All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+		<script>
+			(function () {
+				if (window.__cursorInitialized) return;
+				
+				// Disable custom cursor script on touch devices
+				if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+					return;
+				}
+
+				window.__cursorInitialized = true;
+
+				let dot, ring;
+				let mouseX = 0,
+					mouseY = 0;
+				let ringX = 0,
+					ringY = 0;
+				let animationId = null;
+
+				const interactiveSelector =
+					'a, button, input, textarea, select, [role="button"], [onclick], label, .btn';
+
+				function updatePosition() {
+					if (!dot || !ring) {
+						dot = document.querySelector(".cursor-dot");
+						ring = document.querySelector(".cursor-ring");
+					}
+
+					if (dot && ring) {
+						dot.style.left = mouseX + "px";
+						dot.style.top = mouseY + "px";
+
+						ringX += (mouseX - ringX) * 0.15;
+						ringY += (mouseY - ringY) * 0.15;
+						ring.style.left = ringX + "px";
+						ring.style.top = ringY + "px";
+					}
+
+					animationId = requestAnimationFrame(updatePosition);
+				}
+
+				function onMouseMove(e) {
+					mouseX = e.clientX;
+					mouseY = e.clientY;
+				}
+
+				function showCursor() {
+					document.body.classList.add("cursor-visible");
+				}
+
+				function hideCursor() {
+					document.body.classList.remove("cursor-visible");
+				}
+
+				function addHover() {
+					document.body.classList.add("cursor-hover");
+				}
+
+				function removeHover() {
+					document.body.classList.remove("cursor-hover");
+				}
+
+				function addActive() {
+					document.body.classList.add("cursor-active");
+				}
+
+				function removeActive() {
+					document.body.classList.remove("cursor-active");
+				}
+
+				function attachHoverListeners() {
+					document
+						.querySelectorAll(interactiveSelector)
+						.forEach((el) => {
+							// Remove first to prevent duplicates
+							el.removeEventListener("mouseenter", addHover);
+							el.removeEventListener("mouseleave", removeHover);
+							el.addEventListener("mouseenter", addHover);
+							el.addEventListener("mouseleave", removeHover);
+						});
+				}
+
+				function initCursor() {
+					dot = document.querySelector(".cursor-dot");
+					ring = document.querySelector(".cursor-ring");
+
+					if (!dot || !ring) return;
+
+					attachHoverListeners();
+
+					if (document.hasFocus()) {
+						showCursor();
+					}
+				}
+
+				document.addEventListener("mousemove", onMouseMove);
+				document.addEventListener("mouseenter", showCursor);
+				document.addEventListener("mouseleave", hideCursor);
+				document.addEventListener("mousedown", addActive);
+				document.addEventListener("mouseup", removeActive);
+				window.addEventListener("blur", hideCursor);
+				window.addEventListener("focus", showCursor);
+
+				updatePosition();
+
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", initCursor);
+				} else {
+					initCursor();
+				}
+
+				document.addEventListener("astro:page-load", initCursor);
+				document.addEventListener("astro:after-swap", initCursor);
+			})();
+		</script><script>
+					(function() {
+						const loader = document.getElementById("loading-screen");
+						const hasVisited = sessionStorage.getItem("HasVisited");
+
+						if (loader && !hasVisited) {
+							// Prevent scrolling
+							document.documentElement.classList.add("loading");
+							document.documentElement.style.overflow = "hidden";
+							document.body.style.overflow = "hidden";
+
+							setTimeout(() => {
+								loader.classList.add("fade-out");
+
+								// Re-enable scrolling after animation starts
+								setTimeout(() => {
+									document.documentElement.classList.remove("loading");
+									document.documentElement.style.overflow = "";
+									document.body.style.overflow = "";
+									sessionStorage.setItem("HasVisited", "true");
+								}, 800); // Match transition duration in CSS
+							}, 2500);
+						} else if (loader) {
+							loader.style.display = "none";
+						}
+					})();
+				</script>
+	</body>
+</html>

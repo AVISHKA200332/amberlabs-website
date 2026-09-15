@@ -1,0 +1,37 @@
+/* Base */
+@import './base/theme.css';
+@import './base/fonts.css';
+@import './base/reset.css';
+@import './base/cursor.css';
+
+/* Utilities */
+@import './utilities/utilities.css';
+
+/* Components */
+@import './components/button.css';
+@import './components/navbar.css';
+@import './components/footer.css';
+@import './components/page-header.css';
+@import './components/text-image-block.css';
+@import './components/register-now-btn.css';
+@import './components/back-btn.css';
+@import './components/image-presentation.css';
+@import './components/responsive-table.css';
+@import './components/form.css';
+
+/* Layout */
+@import './layout/container.css';
+
+/* Pages */
+@import './pages/home.css';
+@import './pages/contact.css';
+@import './pages/about.css';
+@import './pages/consultancy.css';
+@import './pages/services.css';
+@import './pages/login.css';
+@import './pages/news.css';
+@import './pages/conference.css';
+@import './pages/registration-guidelines.css';
+@import './pages/scientific-program.css';
+@import './pages/sponsoring.css';
+@import './pages/experience-sri-lanka.css';

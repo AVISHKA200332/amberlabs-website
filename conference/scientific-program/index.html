@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script>
+			(function () {
+				const stored = localStorage.getItem("theme");
+				const prefersDark = window.matchMedia(
+					"(prefers-color-scheme: dark)",
+				).matches;
+				const theme = stored || (prefersDark ? "dark" : "light");
+				document.documentElement.dataset.theme = theme;
+			})();
+		</script><meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/png" href="/img/Amber%20Logo-08.png">
+		<link rel="stylesheet" href="/styles/index.css">
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+		<title>Scientific Program - ICFIRE 2026 | Amber Laboratory</title>
+		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script><script>(function(){const showLoader = false;
+
+			if (showLoader && sessionStorage.getItem("HasVisited") === "true") {
+				document.documentElement.classList.add("loader-hidden");
+			}
+		})();</script><style>.person-card[data-astro-cid-rvbyvrvq] {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  gap: 2rem;
+}
+
+.person-card[data-astro-cid-rvbyvrvq]:last-child {
+  border-bottom: none;
+}
+
+.person-image[data-astro-cid-rvbyvrvq] {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.person-image[data-astro-cid-rvbyvrvq] img[data-astro-cid-rvbyvrvq] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-info[data-astro-cid-rvbyvrvq] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.person-name[data-astro-cid-rvbyvrvq] {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.person-affiliation[data-astro-cid-rvbyvrvq] {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+@media (width <= 640px) {
+  .person-info[data-astro-cid-rvbyvrvq] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+  }
+
+  .person-affiliation[data-astro-cid-rvbyvrvq] {
+    text-align: left;
+  }
+}
+.banner-btn[data-astro-cid-bg5i3ujf] {
+  box-shadow: 0 10px 20px #0000004d;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  text-decoration: none;
+  background-color: var(--accent-gold) !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  transition: all .3s !important;
+}
+
+.banner-btn[data-astro-cid-bg5i3ujf]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px #00000080;
+  background-color: #fff !important;
+}
+
+@media (width >= 992px) {
+  .banner-btn[data-astro-cid-bg5i3ujf] {
+    padding: 1rem 2.5rem !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (width <= 768px) {
+  .banner-btn[data-astro-cid-bg5i3ujf] {
+    font-size: .85rem !important;
+    padding: .6rem 1.2rem !important;
+  }
+}
+
+@media (width <= 480px) {
+  .banner-btn[data-astro-cid-bg5i3ujf] {
+    font-size: .75rem !important;
+    padding: .4rem .8rem !important;
+  }
+}
+/*$vite$:1*/</style></head>
+	<body>
+		
+
+		<div class="cursor-dot"></div>
+		<div class="cursor-ring"></div>
+
+		<header class="site-header">
+    <nav class="container navbar">
+        <a href="/" class="navbar-brand">
+            <img src="/img/logo.png" alt="Amber Laboratory Logo" class="logo-dark">
+            <img src="/img/logo-dark.png" alt="Amber Laboratory Logo" class="logo-light">
+        </a>
+
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+            <i class="ri-menu-3-fill"></i>
+        </button>
+
+        <ul class="navbar-nav" id="navbar-menu">
+            <li>
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li>
+                <a href="/about-us" class="nav-link">About Us</a>
+            </li>
+            <li>
+                <a href="/services" class="nav-link">Services</a>
+            </li>
+            <li>
+                <a href="/consultancy" class="nav-link">Consultancy</a>
+            </li>
+            <li>
+                <a href="/conference" class="nav-link">News & Blog</a>
+            </li>
+            <li>
+                <a href="/contact-us" class="nav-link">Contact</a>
+            </li>
+            <li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="ri-sun-line"></i>
+                    <i class="ri-moon-line"></i>
+                </button>
+            </li>
+            <li>
+                <a href="/login" class="nav-link">
+                    <i class="ri-user-line user-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script type="module">//#region src/components/shared/Navbar.astro?astro&type=script&index=0&lang.ts
+document.getElementById("theme-toggle")?.addEventListener("click", () => {
+	const next = (document.documentElement.dataset.theme || "dark") === "dark" ? "light" : "dark";
+	document.documentElement.dataset.theme = next;
+	localStorage.setItem("theme", next);
+});
+var menuToggle = document.getElementById("menu-toggle");
+var navbarMenu = document.getElementById("navbar-menu");
+menuToggle?.addEventListener("click", () => {
+	navbarMenu?.classList.toggle("active");
+	const icon = menuToggle.querySelector("i");
+	if (navbarMenu?.classList.contains("active")) icon?.classList.replace("ri-menu-3-fill", "ri-close-line");
+	else icon?.classList.replace("ri-close-line", "ri-menu-3-fill");
+});
+//#endregion</script>
+
+		<main>
+			
+  <section class="themes-section" data-astro-cid-bg5i3ujf>
+    <div class="container main-content" data-astro-cid-bg5i3ujf>
+      <a href="/conference#quick-links" class="back-btn anim-hidden" data-astro-cid-bg5i3ujf>
+        <i class="ri-arrow-left-line" data-astro-cid-bg5i3ujf></i> Back to Conference
+      </a>
+
+      <header class="registration-header" data-astro-cid-bg5i3ujf>
+        <h1 class="registration-title" data-astro-cid-bg5i3ujf>Scientific Program</h1>
+      </header>
+
+      <link rel="stylesheet" href="/styles/pages/experience-sri-lanka.css">
+
+      <h2 class="experience-section-title anim-hidden" data-astro-cid-bg5i3ujf>Key Technical Themes</h2>
+
+      <div class="themes-grid" data-astro-cid-bg5i3ujf>
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            Global fire safety trends, fire incidents, emerging challenges, and
+            mitigation strategies
+          </p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            The fire regulations, codes, and enforcement frameworks in Sri Lanka
+          </p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            An overview of fire Incidents and emerging challenges in Sri Lanka
+          </p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            Modern Built Environments: Architectural Requirements and Design
+            Perspectives
+          </p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>Modern Built Environments: Structural Engineering Perspective</p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>Fire dynamics and measurements</p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            Structural fire engineering and performance-based fire design
+            (modelling, simulation/VR) in the built environment
+          </p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>Human behaviour, evacuation strategies, and fire forensics</p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            New and Emerging fire risks in urban infrastructure and energy
+            systems, including:
+          </p>
+          <ul class="theme-sublist" data-astro-cid-bg5i3ujf>
+            <li data-astro-cid-bg5i3ujf>
+              Battery Energy Storage Systems (BESS), Electric vehicles (EVs),
+              Hydrogen technologies.
+            </li>
+          </ul>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            Advances in Research and innovations in fire-resistant materials and
+            assemblies in the built environment
+          </p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            Applications of Artificial Intelligence (AI) in fire science and
+            technology
+          </p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>Fire-resistant materials applications and performance</p>
+        </div>
+
+        <div class="theme-card anim-hidden" data-astro-cid-bg5i3ujf>
+          <p data-astro-cid-bg5i3ujf>
+            Fireproofing material testing and certification: Ensuring compliance
+            through standards and laboratory facilities
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="committees-section" id="committees" data-astro-cid-bg5i3ujf>
+    <div class="container main-content" data-astro-cid-bg5i3ujf>
+      <div class="committee-group anim-hidden" data-astro-cid-bg5i3ujf>
+        <h3 class="group-title" data-astro-cid-bg5i3ujf>Invited Speakers</h3>
+        <div class="group-divider" data-astro-cid-bg5i3ujf></div>
+        <div class="persons-list" data-astro-cid-bg5i3ujf>
+          <div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/prof-priyan.png" alt="Prof. Priyan Mendis" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Prof. Priyan Mendis</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Infrastructure Engineering, University of Melbourne, Australia</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/prof-kate.jpg" alt="Prof. Kate Nguyen" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Prof. Kate Nguyen</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Leader of Fire Engineering &amp; Deputy Head of Department, Civil &amp; Infrastructure Engineering, RMIT University, Melbourne, Australia</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/Ryan-Hilditch.jpg" alt="Dr. Ryan Hilditch" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Ryan Hilditch</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Principal, Halliwell Fire Science, Australia and New Zealand</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-ahamed.jpeg" alt="Dr. Imran Ahamed" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Imran Ahamed</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Senior Fire Consultant, Halliwell Fire Science, Brisbane, Australia</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-khan.png" alt="Dr. Aatif Ali Khan" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Aatif Ali Khan</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Senior Lecturer, Civil and Environmental Engineering, University of Canterbury, New Zealand</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-pasindu.jpg" alt="Dr. Pasindu Weerasinghe" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Pasindu Weerasinghe</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Civil Engineering, Faculty of Engineering, University of Moratuwa, Sri Lanka</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-prabath.jpeg" alt="Dr. Prabath Weerasinghe" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Prabath Weerasinghe</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Electrical and Information Engineering, Faculty of Engineering, University of Ruhuna, Sri Lanka</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/Shiromal.jpeg" alt="Eng. Shiromal Fernando" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Eng. Shiromal Fernando</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Civil and Structural Engineering Consultancy (CSEC) Pvt Ltd., Sri Lanka</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/Hemachandra.jpeg" alt="Eng. M G Hemachandra" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Eng. M G Hemachandra</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Chairman, Urban Development Authority, Sri Lanka</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/architect-athula.png" alt="Architect Athula Amarasekera" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Architect Athula Amarasekera</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Design Team 3, Singapore</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-uthpala.jpeg" alt="Dr. Uthpala Rathnayake" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Uthpala Rathnayake</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Facility Management, Faculty of Architecture, University of Moratuwa, Sri Lanka</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/kosala-kamburadeniya.jpeg" alt="Eng. Kosala Kamburadeniya" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Eng. Kosala Kamburadeniya</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>President of the Institute of Engineering Sri Lanka and Managing Director and Principal Consultant, K2 Consultants (Pvt) Ltd, Sri Lanka</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/eng-dilan.jpeg" alt="Eng. Dilan Kahatapitiya" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Eng. Dilan Kahatapitiya</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Manager of Training and Research, Civil and Structural Engineering Consultancy (CSEC) Pvt Ltd., Sri Lanka</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/vithya.png" alt="Mrs Vithyaa Thavapalan" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Mrs Vithyaa Thavapalan</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Founder, Managing Director, and Forensic Fire Investigator, Forensic Origin and Cause Investigations, Australia</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/ashley-de-vos.png" alt="Architect Ashley de Vos" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Architect Ashley de Vos</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Consultant, ADV Consultants, Sri Lanka</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/vajira-attanayake.jpeg" alt="Eng. Vajira Attanayake" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Eng. Vajira Attanayake</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Group Director, Airow Solutions (Pvt) Ltd., Sri Lanka</p>
+    </div>
+</div>
+        </div>
+      </div>
+
+      <div class="committee-group anim-hidden" data-astro-cid-bg5i3ujf>
+        <h3 class="group-title" data-astro-cid-bg5i3ujf>Scientific Committee</h3>
+        <div class="group-divider" data-astro-cid-bg5i3ujf></div>
+
+        <div class="sub-committee" data-astro-cid-bg5i3ujf>
+          <h4 class="sub-group-title" data-astro-cid-bg5i3ujf>International Scientific Committee</h4>
+          <div class="persons-list" data-astro-cid-bg5i3ujf>
+            <div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/prof-priyan.png" alt="Prof. Priyan Mendis" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Prof. Priyan Mendis</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Infrastructure Engineering, University of Melbourne, Australia</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/prof-kate.jpg" alt="Prof. Kate Nguyen" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Prof. Kate Nguyen</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Leader of Fire Engineering &amp; Deputy Head of Department, Civil &amp; Infrastructure Engineering, RMIT University, Melbourne, Australia</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-ahamed.jpeg" alt="Dr. Imran Ahamed" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Imran Ahamed</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Senior Researcher, Halliwell Fire, Australia</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-khan.png" alt="Dr. Aatif Ali Khan" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Aatif Ali Khan</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Senior Lecturer, Civil and Environmental Engineering, University of Canterbury, New Zealand</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="https://ui-avatars.com/api/?name=Rohit+Berwal&amp;background=808080&amp;color=fff" alt="Rohit Berwal" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Rohit Berwal</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Global Scientific (India) Pvt. Ltd., New Delhi, India</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="https://ui-avatars.com/api/?name=Janaka+Ruwanpura&amp;background=808080&amp;color=fff" alt="Prof. Janaka Ruwanpura" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Prof. Janaka Ruwanpura</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Civil Engineering, School of Engineering, University of Calgary, Canada</p>
+    </div>
+</div>
+          </div>
+        </div>
+
+        <div class="sub-committee" data-astro-cid-bg5i3ujf>
+          <h4 class="sub-group-title" data-astro-cid-bg5i3ujf>Local Scientific Committee</h4>
+          <div class="persons-list" data-astro-cid-bg5i3ujf>
+            <div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/Shiromal.jpeg" alt="Eng. Shiromal Fernando" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Eng. Shiromal Fernando</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Civil and Structural Engineering Consultancy Pvt Ltd.</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-pasindu.jpg" alt="Dr. Pasindu Weerasinghe" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Pasindu Weerasinghe</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Civil Engineering, Faculty of Engineering, University of Moratuwa</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-prabath.jpeg" alt="Dr. Prabath Weerasinghe" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Prabath Weerasinghe</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Electrical and Information Engineering, Faculty of Engineering, University of Ruhuna</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-uthpala.jpeg" alt="Dr. Uthpala Rathnayake" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Uthpala Rathnayake</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Dept of Facility Management, Faculty of Architecture, University of Moratuwa</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/dr-radhika.png" alt="Dr. Radhika Samarasekera" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Dr. Radhika Samarasekera</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Amber Laboratory (Pvt) Ltd.</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/mr-harshanath.jpeg" alt="Eng. Harshanath Rathnayaka" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Eng. Harshanath Rathnayaka</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Amber Laboratory (Pvt) Ltd.</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/nidula-karunarathna.jpeg" alt="M. M. N. J. Karunarathna" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>M. M. N. J. Karunarathna</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Amber Laboratory (Pvt) Ltd.</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/thulnith.jpeg" alt="Thulinith Attanayake" style="object-position: top" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>Thulinith Attanayake</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Amber Laboratory (Pvt) Ltd.</p>
+    </div>
+</div><div class="person-card" data-astro-cid-rvbyvrvq>
+    <div class="person-image" data-astro-cid-rvbyvrvq>
+        <img src="/img/conference/committees/kasthuri-arachchi.jpeg" alt="K.A.D.D.Kasthuri Arachchi" style="object-position: center" data-astro-cid-rvbyvrvq>
+    </div>
+    <div class="person-info" data-astro-cid-rvbyvrvq>
+        <h3 class="person-name" data-astro-cid-rvbyvrvq>K.A.D.D.Kasthuri Arachchi</h3>
+        <p class="person-affiliation" data-astro-cid-rvbyvrvq>Amber Laboratory (Pvt) Ltd.</p>
+    </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="program-link-section" style="padding: 4rem 0;" data-astro-cid-bg5i3ujf>
+    <div class="container main-content" data-astro-cid-bg5i3ujf>
+      <a href="/docs/Program.pdf" class="btn banner-btn anim-hidden" target="_blank" rel="noopener noreferrer" data-astro-cid-bg5i3ujf="true">
+            
+        Program - View Detail
+        <i class="ri-arrow-right-line" data-astro-cid-bg5i3ujf></i>
+      
+        </a>
+    </div>
+  </section>
+
+  <section class="image-presentation-section" data-astro-cid-bg5i3ujf>
+    <div class="container" data-astro-cid-bg5i3ujf>
+      <h2 class="experience-section-title anim-hidden" data-astro-cid-bg5i3ujf>Call for Images</h2>
+
+      <div class="presentation-content" data-astro-cid-bg5i3ujf>
+        <p class="presentation-description anim-hidden" data-astro-cid-bg5i3ujf>
+          International Conference on Fire Safety and Resilience of the Built
+          Environment - ICFIRE 2026
+        </p>
+
+        <p class="presentation-description anim-hidden" data-astro-cid-bg5i3ujf>
+          March 3, 2026 – Beginning of submission for images <br data-astro-cid-bg5i3ujf>
+          June 15, 2026 – Submission deadline for images <br data-astro-cid-bg5i3ujf>
+          June 30, 2026 – Notification of acceptance of images
+        </p>
+
+        <div class="presentation-description anim-hidden" data-astro-cid-bg5i3ujf>
+          <h3 style="color: var(--accent-gold); margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+            Submitting your image
+          </h3>
+
+          <ul style="list-style: disc; margin-left: 1.5rem; color: var(--text-primary);" data-astro-cid-bg5i3ujf>
+            <li style="margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+              Images and captions (no more than 100 words / 500 characters)
+              should be electronically submitted by June 15, 2026, through
+              email: <a href="mailto:info@amber-laboratory.com" style="color: var(--accent-gold); text-decoration: none;" data-astro-cid-bg5i3ujf>info@amber-laboratory.com</a>
+            </li>
+            <li style="margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+              The image format should be jpg or png with a maximum image size of
+              5 Mbyte for submission review.
+            </li>
+            <li style="margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+              Images submitted after the June 15, 2026, deadline will not be
+              considered.
+            </li>
+          </ul>
+        </div>
+
+        <div class="presentation-description anim-hidden" data-astro-cid-bg5i3ujf>
+          <h3 style="color: var(--accent-gold); margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+            Image Submission / Review
+          </h3>
+
+          <ul style="list-style: disc; margin-left: 1.5rem; color: var(--text-primary);" data-astro-cid-bg5i3ujf>
+            <li style="margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+              <strong style="color: var(--text-primary);" data-astro-cid-bg5i3ujf>Images:</strong> Must be
+              original work, non-commercial, non-promotional, and not AI-generated.
+              For submission through the Amber laboratory website, ICFIRE 2026, or
+              email, the image format should be jpg, png, or bmp, with the maximum
+              image size for submission review of 5 Mbyte.
+            </li>
+            <li style="margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+              <strong style="color: var(--text-primary);" data-astro-cid-bg5i3ujf>Style:</strong> Images may
+              correspond to experimental studies, numerical studies, or actual events
+              related to fire safety science.
+            </li>
+            <li style="margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+              <strong style="color: var(--text-primary);" data-astro-cid-bg5i3ujf>Caption:</strong> A brief
+              figure caption describing the image is expected to accompany the image.
+              Captions are limited to 100 words / 500 characters. The submitter should
+              also include their name and affiliation with the caption, but this information
+              is not included in the word count.
+            </li>
+            <li style="margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+              <strong style="color: var(--text-primary);" data-astro-cid-bg5i3ujf>Digital Display:</strong> Submitters will be provided a display that will include their image,
+              caption, name, and affiliation. Submitters are not required to be in
+              attendance at their image during the display session.
+            </li>
+          </ul>
+        </div>
+
+        <div class="presentation-description anim-hidden" data-astro-cid-bg5i3ujf>
+          <h3 style="color: var(--accent-gold); margin-bottom: 1rem;" data-astro-cid-bg5i3ujf>
+            Example
+          </h3>
+
+          <ul style="list-style: none; padding: 0; color: var(--text-primary);" data-astro-cid-bg5i3ujf>
+            <li style="margin-bottom: 0.5rem;" data-astro-cid-bg5i3ujf>
+              <strong style="color: var(--accent-gold);" data-astro-cid-bg5i3ujf>Title:</strong> Fire Resistance
+              Test of Concrete Column
+            </li>
+            <li style="margin-bottom: 0.5rem;" data-astro-cid-bg5i3ujf>
+              <strong style="color: var(--accent-gold);" data-astro-cid-bg5i3ujf>Caption:</strong> This image
+              shows a reinforced concrete column undergoing a fire resistance test
+              in a furnace to evaluate structural stability under high temperatures.
+            </li>
+            <li style="margin-bottom: 0.5rem;" data-astro-cid-bg5i3ujf>
+              <strong style="color: var(--accent-gold);" data-astro-cid-bg5i3ujf>Author:</strong> Dr. Jane
+              Smith
+            </li>
+            <li style="margin-bottom: 0.5rem;" data-astro-cid-bg5i3ujf>
+              <strong style="color: var(--accent-gold);" data-astro-cid-bg5i3ujf>Affiliation:</strong> University
+              of Melbourne, Australia
+            </li>
+          </ul>
+
+          <div style="margin-top: 3rem; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--accent-gold);" data-astro-cid-bg5i3ujf>
+            <img src="/img/call-for-images-example.jpg" alt="Call for Images Example" style="width: 100%; height: auto; display: block;" data-astro-cid-bg5i3ujf>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const { animate, inView, stagger } = Motion;
+
+    inView(
+      ".themes-section",
+      () => {
+        animate(
+          ".back-btn, .registration-title, .themes-section .experience-section-title",
+          { opacity: [0, 1], y: [20, 0] },
+          { duration: 1, easing: "ease-out", delay: stagger(0.1) },
+        );
+        animate(
+          ".theme-card",
+          { opacity: [0, 1], y: [20, 0] },
+          {
+            duration: 0.8,
+            easing: "ease-out",
+            delay: stagger(0.1),
+          },
+        );
+      },
+      { amount: 0.1 },
+    );
+
+    inView(
+      ".image-presentation-section",
+      () => {
+        animate(
+          ".image-presentation-section .experience-section-title",
+          { opacity: [0, 1], y: [20, 0] },
+          { duration: 1, easing: "ease-out" },
+        );
+        animate(
+          ".presentation-description",
+          { opacity: [0, 1], y: [20, 0] },
+          {
+            duration: 0.8,
+            easing: "ease-out",
+            delay: stagger(0.15, { startDelay: 0.2 }),
+          },
+        );
+      },
+      { amount: 0.1 },
+    );
+
+    inView(
+      ".committees-section",
+      () => {
+        animate(
+          ".committees-section .experience-section-title, .committee-group",
+          { opacity: [0, 1], y: [20, 0] },
+          { duration: 0.8, easing: "ease-out", delay: stagger(0.1) },
+        );
+      },
+      { amount: 0.1 },
+    );
+
+    inView(
+      ".program-link-section",
+      () => {
+        animate(
+          ".program-link-section .anim-hidden",
+          { opacity: [0, 1], y: [20, 0] },
+          { duration: 0.8, easing: "ease-out" },
+        );
+      },
+      { amount: 0.1 },
+    );
+  </script>
+
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjpbCupWJsTEXnoET6W1dttovymbNh8ygCJCVaO-_Oapgi6A/viewform?usp=heade" class="btn register-now-btn" target="_blank" rel="noopener noreferrer">
+            
+    Register Now
+    <i class="ri-arrow-right-up-line"></i>
+
+        </a>
+
+		</main>
+
+		<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col logo-col">
+        <a href="/" class="footer-logo-link">
+          <img src="/img/footer-logo.png" alt="Amber Laboratory" class="footer-logo logo-dark">
+          <img src="/img/footer-logo-dark.png" alt="Amber Laboratory" class="footer-logo logo-light">
+        </a>
+        <p class="footer-company-name">Amber Laboratory (Pvt) Ltd</p>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <i class="ri-phone-fill"></i>
+            <a href="tel:+94705401900">+94 70 540 1900</a>
+          </li>
+          <li>
+            <i class="ri-mail-line"></i>
+            <a href="mailto: info@amber-laboratory.com">
+              info@amber-laboratory.com</a>
+          </li>
+          <li>
+            <i class="ri-map-pin-line"></i>
+            <span>399/8 Colvin Perera Mawatha, Samagi Mawatha, Hokandara South,
+              Hokandara.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h3>Stay Updated!</h3>
+        <form class="newsletter-form" action="#" method="POST">
+          <input type="email" placeholder="Your Email Address..." required>
+          <button type="submit" aria-label="Subscribe">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </form>
+
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="#" aria-label="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-middle">
+      <a href="/careers" class="gold-link">Careers</a>
+      <a href="/conference" class="gold-link">Conference</a>
+      <a href="/testing-portal" class="gold-link">Testing Portal</a>
+      <a href="/student-portal" class="gold-link">Student Portal</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/contact-us">Contact Us</a>
+      </div>
+      <p class="copyright-text">
+        &copy; 2026 Ardent Hive, All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+		<script>
+			(function () {
+				if (window.__cursorInitialized) return;
+				
+				// Disable custom cursor script on touch devices
+				if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+					return;
+				}
+
+				window.__cursorInitialized = true;
+
+				let dot, ring;
+				let mouseX = 0,
+					mouseY = 0;
+				let ringX = 0,
+					ringY = 0;
+				let animationId = null;
+
+				const interactiveSelector =
+					'a, button, input, textarea, select, [role="button"], [onclick], label, .btn';
+
+				function updatePosition() {
+					if (!dot || !ring) {
+						dot = document.querySelector(".cursor-dot");
+						ring = document.querySelector(".cursor-ring");
+					}
+
+					if (dot && ring) {
+						dot.style.left = mouseX + "px";
+						dot.style.top = mouseY + "px";
+
+						ringX += (mouseX - ringX) * 0.15;
+						ringY += (mouseY - ringY) * 0.15;
+						ring.style.left = ringX + "px";
+						ring.style.top = ringY + "px";
+					}
+
+					animationId = requestAnimationFrame(updatePosition);
+				}
+
+				function onMouseMove(e) {
+					mouseX = e.clientX;
+					mouseY = e.clientY;
+				}
+
+				function showCursor() {
+					document.body.classList.add("cursor-visible");
+				}
+
+				function hideCursor() {
+					document.body.classList.remove("cursor-visible");
+				}
+
+				function addHover() {
+					document.body.classList.add("cursor-hover");
+				}
+
+				function removeHover() {
+					document.body.classList.remove("cursor-hover");
+				}
+
+				function addActive() {
+					document.body.classList.add("cursor-active");
+				}
+
+				function removeActive() {
+					document.body.classList.remove("cursor-active");
+				}
+
+				function attachHoverListeners() {
+					document
+						.querySelectorAll(interactiveSelector)
+						.forEach((el) => {
+							// Remove first to prevent duplicates
+							el.removeEventListener("mouseenter", addHover);
+							el.removeEventListener("mouseleave", removeHover);
+							el.addEventListener("mouseenter", addHover);
+							el.addEventListener("mouseleave", removeHover);
+						});
+				}
+
+				function initCursor() {
+					dot = document.querySelector(".cursor-dot");
+					ring = document.querySelector(".cursor-ring");
+
+					if (!dot || !ring) return;
+
+					attachHoverListeners();
+
+					if (document.hasFocus()) {
+						showCursor();
+					}
+				}
+
+				document.addEventListener("mousemove", onMouseMove);
+				document.addEventListener("mouseenter", showCursor);
+				document.addEventListener("mouseleave", hideCursor);
+				document.addEventListener("mousedown", addActive);
+				document.addEventListener("mouseup", removeActive);
+				window.addEventListener("blur", hideCursor);
+				window.addEventListener("focus", showCursor);
+
+				updatePosition();
+
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", initCursor);
+				} else {
+					initCursor();
+				}
+
+				document.addEventListener("astro:page-load", initCursor);
+				document.addEventListener("astro:after-swap", initCursor);
+			})();
+		</script>
+	</body>
+</html>

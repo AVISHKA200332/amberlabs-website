@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script>
+			(function () {
+				const stored = localStorage.getItem("theme");
+				const prefersDark = window.matchMedia(
+					"(prefers-color-scheme: dark)",
+				).matches;
+				const theme = stored || (prefersDark ? "dark" : "light");
+				document.documentElement.dataset.theme = theme;
+			})();
+		</script><meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/png" href="/img/Amber%20Logo-08.png">
+		<link rel="stylesheet" href="/styles/index.css">
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+		<title>News &amp; Blog | Amber Laboratory</title>
+		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script><script>(function(){const showLoader = false;
+
+			if (showLoader && sessionStorage.getItem("HasVisited") === "true") {
+				document.documentElement.classList.add("loader-hidden");
+			}
+		})();</script><style>.person-card[data-astro-cid-rvbyvrvq] {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  gap: 2rem;
+}
+
+.person-card[data-astro-cid-rvbyvrvq]:last-child {
+  border-bottom: none;
+}
+
+.person-image[data-astro-cid-rvbyvrvq] {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.person-image[data-astro-cid-rvbyvrvq] img[data-astro-cid-rvbyvrvq] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-info[data-astro-cid-rvbyvrvq] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.person-name[data-astro-cid-rvbyvrvq] {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.person-affiliation[data-astro-cid-rvbyvrvq] {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+@media (width <= 640px) {
+  .person-info[data-astro-cid-rvbyvrvq] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+  }
+
+  .person-affiliation[data-astro-cid-rvbyvrvq] {
+    text-align: left;
+  }
+}
+/*$vite$:1*/</style></head>
+	<body>
+		<div class="cursor-dot"></div>
+		<div class="cursor-ring"></div>
+
+		<header class="site-header">
+    <nav class="container navbar">
+        <a href="/" class="navbar-brand">
+            <img src="/img/logo.png" alt="Amber Laboratory Logo" class="logo-dark">
+            <img src="/img/logo-dark.png" alt="Amber Laboratory Logo" class="logo-light">
+        </a>
+
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+            <i class="ri-menu-3-fill"></i>
+        </button>
+
+        <ul class="navbar-nav" id="navbar-menu">
+            <li>
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li>
+                <a href="/about-us" class="nav-link">About Us</a>
+            </li>
+            <li>
+                <a href="/services" class="nav-link">Services</a>
+            </li>
+            <li>
+                <a href="/consultancy" class="nav-link">Consultancy</a>
+            </li>
+            <li>
+                <a href="/conference" class="nav-link">News & Blog</a>
+            </li>
+            <li>
+                <a href="/contact-us" class="nav-link">Contact</a>
+            </li>
+            <li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="ri-sun-line"></i>
+                    <i class="ri-moon-line"></i>
+                </button>
+            </li>
+            <li>
+                <a href="/login" class="nav-link">
+                    <i class="ri-user-line user-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script type="module">//#region src/components/shared/Navbar.astro?astro&type=script&index=0&lang.ts
+document.getElementById("theme-toggle")?.addEventListener("click", () => {
+	const next = (document.documentElement.dataset.theme || "dark") === "dark" ? "light" : "dark";
+	document.documentElement.dataset.theme = next;
+	localStorage.setItem("theme", next);
+});
+var menuToggle = document.getElementById("menu-toggle");
+var navbarMenu = document.getElementById("navbar-menu");
+menuToggle?.addEventListener("click", () => {
+	navbarMenu?.classList.toggle("active");
+	const icon = menuToggle.querySelector("i");
+	if (navbarMenu?.classList.contains("active")) icon?.classList.replace("ri-menu-3-fill", "ri-close-line");
+	else icon?.classList.replace("ri-close-line", "ri-menu-3-fill");
+});
+//#endregion</script>
+
+		<main>
+			<section class="news-article-hero">
+				<div class="container">
+					<div class="news-article-kicker anim-hidden">News & Blog</div>
+					<div class="news-article-header">
+						<h1 class="news-article-title anim-hidden">
+							ICFIRE 2026 successfully held in Colombo
+						</h1>
+						<p class="news-article-intro anim-hidden">
+							Amber Laboratory marked an important milestone for Sri Lanka's fire-safety sector with a two-day international gathering at BMICH.
+						</p>
+					</div>
+					<div class="news-article-meta anim-hidden">
+						<span><i class="ri-calendar-event-line"></i> 22-23 July 2026</span>
+						<span><i class="ri-map-pin-2-line"></i> BMICH, Colombo</span>
+						<span><i class="ri-time-line"></i> Event recap</span>
+					</div>
+					<figure class="news-hero-image anim-hidden">
+						<img src="/ICFIRE%202026%20Images/1.jpg" alt="ICFIRE 2026 conference moment">
+					</figure>
+				</div>
+			</section>
+
+			<section class="news-article-section">
+				<div class="container news-article-layout">
+					<aside class="news-article-sidebar anim-hidden" aria-label="Article highlights">
+						<div class="news-fact">
+							<span class="news-fact-label">Theme</span>
+							<strong>Advancing fire-resilient materials and systems</strong>
+						</div>
+						<div class="news-fact">
+							<span class="news-fact-label">Sessions</span>
+							<strong>Six technical sessions</strong>
+						</div>
+						<div class="news-fact">
+							<span class="news-fact-label">Technical Partner</span>
+							<strong>SFPE Sri Lanka Chapter</strong>
+						</div>
+					</aside>
+
+					<article class="news-article-body">
+						<p class="anim-hidden">
+							The International Conference on Fire Safety and Resilience of the Built Environment &ndash; ICFIRE 2026 was successfully held on 22&ndash;23 July 2026 at BMICH, Colombo, Sri Lanka, under the theme &ldquo;Advancing Fire-Resilient Materials and Systems for Future-Proofing Sustainable Built Environments.&rdquo; The two-day conference brought together leading local and international experts, researchers, engineers, architects, fire-safety professionals, regulators and industry representatives to exchange knowledge and discuss emerging challenges and innovations in fire safety and resilient built environments.
+						</p>
+						<p class="anim-hidden">
+							The conference was inaugurated with the participation of Hon. Prof. Chrishantha Abeysena, Minister of Science & Technology of Sri Lanka, as the Chief Guest, together with distinguished international and local professionals. Prof. Priyan Mendis of the University of Melbourne, Australia, delivered the keynote address on &ldquo;Fire Engineering and Design: Emerging Trends in Performance Testing and Compliance,&rdquo; setting the foundation for two days of insightful technical discussions. Followed by Dr. Ryan Hilditch, Principal, Halliwell Fire Science, Australia and New Zealand, and Eng. Vajira Attanayake, Group Director, Airow Solutions (Pvt) Ltd., Sri Lanka and Maldives, as Special Guests.
+						</p>
+
+						<div class="news-image-pair anim-hidden">
+							<img src="/ICFIRE%202026%20Images/2.jpg" alt="ICFIRE 2026 conference moment">
+							<img src="/ICFIRE%202026%20Images/3.jpg" alt="ICFIRE 2026 conference moment">
+						</div>
+
+						<p class="anim-hidden">
+							Across six technical sessions, ICFIRE 2026 addressed a broad spectrum of contemporary fire-safety topics, including holistic fire safety engineering, fire protection in historical and heritage buildings, architectural and structural fire-safe design, fire regulations and enforcement, structural fire engineering, emerging risks associated with Battery Energy Storage Systems (BESS) and Electric Vehicles (EVs), fire dynamics, AI-driven fire protection, fire-resistant materials, passive fire protection testing and compliance, fa&ccedil;ade fire safety, fire modelling and forensic fire investigation. The programme featured experts representing leading universities, engineering organisations and fire-science institutions from Sri Lanka, Australia, New Zealand and Singapore.
+						</p>
+						<p class="anim-hidden">
+							The successful delivery of ICFIRE 2026 was further strengthened by the generous support of its valued sponsors: Airow Solutions (Pvt) Ltd. &ndash; Platinum Sponsor, IMSL &ndash; Gold Sponsor, and Lanka Refractories &ndash; Silver Sponsor. Their contribution and commitment played an important role in supporting the conference and advancing dialogue on fire safety, innovation and resilient built environments. The conference was also supported by the Society of Fire Protection Engineers (SFPE) &ndash; Sri Lanka Chapter as the Technical Partner.
+						</p>
+
+						<div class="news-support-grid anim-hidden">
+							<div>
+								<span>Platinum Sponsor</span>
+								<strong>Airow Solutions (Pvt) Ltd.</strong>
+							</div>
+							<div>
+								<span>Gold Sponsor</span>
+								<strong>IMSL</strong>
+							</div>
+							<div>
+								<span>Silver Sponsor</span>
+								<strong>Lanka Refractories</strong>
+							</div>
+						</div>
+
+						<p class="anim-hidden">
+							A significant highlight of the conference was the Practitioners&rsquo; Forum &ndash; Developing the Colombo Declaration, which provided a platform for professionals and stakeholders to contribute towards strengthening the future direction of fire safety and resilience within the built environment.
+						</p>
+						<p class="anim-hidden">
+							ICFIRE 2026 marked an important milestone for Sri Lanka&rsquo;s fire-safety sector, strengthening collaboration between research, engineering practice, industry and regulatory communities while promoting knowledge sharing, innovation and evidence-based approaches to creating safer, more sustainable and fire-resilient built environments in Sri Lanka and beyond.
+						</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="news-gallery-section">
+				<div class="container">
+					<h2 class="news-gallery-title">Event moments</h2>
+					<div class="news-gallery-grid">
+						<div class="news-collage-set">
+							<img src="/ICFIRE%202026%20Images/IMG_2248.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2256.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2261.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2265.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2298.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2303.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2304.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2316.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2327.jpg" alt="ICFIRE 2026 conference gallery moment">
+						</div>
+						<div class="news-collage-set">
+							<img src="/ICFIRE%202026%20Images/IMG_2329.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2351.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2358.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2374.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2395.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2481.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2496.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2550.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2566.jpg" alt="ICFIRE 2026 conference gallery moment">
+						</div>
+						<div class="news-collage-set">
+							<img src="/ICFIRE%202026%20Images/IMG_2608.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2734.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2774.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2777.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2782.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2819.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2826.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2835.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2849.jpg" alt="ICFIRE 2026 conference gallery moment">
+						</div>
+						<div class="news-collage-set news-collage-set-short">
+							<img src="/ICFIRE%202026%20Images/IMG_2875.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2886.jpg" alt="ICFIRE 2026 conference gallery moment">
+							<img src="/ICFIRE%202026%20Images/IMG_2893.jpg" alt="ICFIRE 2026 conference gallery moment">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<script>
+				const { animate, inView, stagger } = Motion;
+
+				animate(
+					".news-article-kicker, .news-article-title, .news-article-intro, .news-article-meta, .news-hero-image",
+					{ opacity: [0, 1], y: [24, 0] },
+					{ duration: 0.9, easing: "ease-out", delay: stagger(0.12) },
+				);
+
+				inView(
+					".news-article-section",
+					() => {
+						animate(
+							".news-article-sidebar, .news-article-body .anim-hidden",
+							{ opacity: [0, 1], y: [22, 0] },
+							{ duration: 0.8, easing: "ease-out", delay: stagger(0.08) },
+						);
+					},
+					{ amount: 0.12 },
+				);
+
+				inView(
+					".news-gallery-section",
+					() => {
+						animate(
+							".news-gallery-title, .news-gallery-grid .anim-hidden",
+							{ opacity: [0, 1], y: [24, 0] },
+							{ duration: 0.8, easing: "ease-out", delay: stagger(0.12) },
+						);
+					},
+					{ amount: 0.2 },
+				);
+			</script>
+		</main>
+
+		<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col logo-col">
+        <a href="/" class="footer-logo-link">
+          <img src="/img/footer-logo.png" alt="Amber Laboratory" class="footer-logo logo-dark">
+          <img src="/img/footer-logo-dark.png" alt="Amber Laboratory" class="footer-logo logo-light">
+        </a>
+        <p class="footer-company-name">Amber Laboratory (Pvt) Ltd</p>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <i class="ri-phone-fill"></i>
+            <a href="tel:+94705401900">+94 70 540 1900</a>
+          </li>
+          <li>
+            <i class="ri-mail-line"></i>
+            <a href="mailto: info@amber-laboratory.com">
+              info@amber-laboratory.com</a>
+          </li>
+          <li>
+            <i class="ri-map-pin-line"></i>
+            <span>399/8 Colvin Perera Mawatha, Samagi Mawatha, Hokandara South,
+              Hokandara.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h3>Stay Updated!</h3>
+        <form class="newsletter-form" action="#" method="POST">
+          <input type="email" placeholder="Your Email Address..." required>
+          <button type="submit" aria-label="Subscribe">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </form>
+
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="#" aria-label="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-middle">
+      <a href="/careers" class="gold-link">Careers</a>
+      <a href="/conference" class="gold-link">Conference</a>
+      <a href="/testing-portal" class="gold-link">Testing Portal</a>
+      <a href="/student-portal" class="gold-link">Student Portal</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/contact-us">Contact Us</a>
+      </div>
+      <p class="copyright-text">
+        &copy; 2026 Ardent Hive, All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+		<script>
+			(function () {
+				if (window.__cursorInitialized) return;
+				
+				// Disable custom cursor script on touch devices
+				if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+					return;
+				}
+
+				window.__cursorInitialized = true;
+
+				let dot, ring;
+				let mouseX = 0,
+					mouseY = 0;
+				let ringX = 0,
+					ringY = 0;
+				let animationId = null;
+
+				const interactiveSelector =
+					'a, button, input, textarea, select, [role="button"], [onclick], label, .btn';
+
+				function updatePosition() {
+					if (!dot || !ring) {
+						dot = document.querySelector(".cursor-dot");
+						ring = document.querySelector(".cursor-ring");
+					}
+
+					if (dot && ring) {
+						dot.style.left = mouseX + "px";
+						dot.style.top = mouseY + "px";
+
+						ringX += (mouseX - ringX) * 0.15;
+						ringY += (mouseY - ringY) * 0.15;
+						ring.style.left = ringX + "px";
+						ring.style.top = ringY + "px";
+					}
+
+					animationId = requestAnimationFrame(updatePosition);
+				}
+
+				function onMouseMove(e) {
+					mouseX = e.clientX;
+					mouseY = e.clientY;
+				}
+
+				function showCursor() {
+					document.body.classList.add("cursor-visible");
+				}
+
+				function hideCursor() {
+					document.body.classList.remove("cursor-visible");
+				}
+
+				function addHover() {
+					document.body.classList.add("cursor-hover");
+				}
+
+				function removeHover() {
+					document.body.classList.remove("cursor-hover");
+				}
+
+				function addActive() {
+					document.body.classList.add("cursor-active");
+				}
+
+				function removeActive() {
+					document.body.classList.remove("cursor-active");
+				}
+
+				function attachHoverListeners() {
+					document
+						.querySelectorAll(interactiveSelector)
+						.forEach((el) => {
+							// Remove first to prevent duplicates
+							el.removeEventListener("mouseenter", addHover);
+							el.removeEventListener("mouseleave", removeHover);
+							el.addEventListener("mouseenter", addHover);
+							el.addEventListener("mouseleave", removeHover);
+						});
+				}
+
+				function initCursor() {
+					dot = document.querySelector(".cursor-dot");
+					ring = document.querySelector(".cursor-ring");
+
+					if (!dot || !ring) return;
+
+					attachHoverListeners();
+
+					if (document.hasFocus()) {
+						showCursor();
+					}
+				}
+
+				document.addEventListener("mousemove", onMouseMove);
+				document.addEventListener("mouseenter", showCursor);
+				document.addEventListener("mouseleave", hideCursor);
+				document.addEventListener("mousedown", addActive);
+				document.addEventListener("mouseup", removeActive);
+				window.addEventListener("blur", hideCursor);
+				window.addEventListener("focus", showCursor);
+
+				updatePosition();
+
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", initCursor);
+				} else {
+					initCursor();
+				}
+
+				document.addEventListener("astro:page-load", initCursor);
+				document.addEventListener("astro:after-swap", initCursor);
+			})();
+		</script>
+	</body>
+</html>

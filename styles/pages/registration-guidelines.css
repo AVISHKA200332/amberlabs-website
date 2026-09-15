@@ -1,0 +1,399 @@
+.main-content {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+}
+
+.registration-header {
+    margin: 0 0 4rem 0;
+}
+
+.registration-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.guidelines-section {
+    margin-bottom: 4rem;
+}
+
+.guidelines-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.guidelines-title i {
+    font-size: 1.25rem;
+}
+
+/* Redesigned Sections */
+
+/* Dates Grid */
+.dates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.date-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.date-year {
+    font-size: 1rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.date-event {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* Inclusions Grid */
+.inclusions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.inclusion-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.inclusion-item i {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    background: rgba(var(--accent-gold-rgb), 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.inclusion-item span {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+/* Process Grid */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+    margin: 2rem 0;
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    height: 100%;
+}
+
+.step-indicator {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    position: relative;
+    z-index: 2;
+    background: var(--bg-primary);
+}
+
+.step-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.step-content h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.step-content p {
+    margin: 0.5rem 0 0 0;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Visa Note */
+.visa-note {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(41, 128, 185, 0.1);
+    /* Subtle blue for info */
+    border-left: 4px solid #3498db;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.visa-note i {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-top: 0.1rem;
+}
+
+.visa-note p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.visa-note strong {
+    color: #3498db;
+}
+
+/* Travel & Accommodation Grid */
+.travel-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.travel-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.travel-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(var(--accent-gold-rgb), 0.1);
+    color: var(--accent-gold);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.travel-card h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.travel-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem 0;
+}
+
+.travel-card p:last-child,
+.travel-card ul:last-child {
+    margin-bottom: 0;
+}
+
+.travel-card strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.travel-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.travel-card li {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.travel-card li::before {
+    content: "\EB7A";
+    /* Remix icon arrow right s line */
+    font-family: 'remixicon';
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+}
+
+.travel-assistance {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.travel-assistance h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin: 0 0 1rem 0;
+}
+
+.travel-assistance p {
+    color: var(--text-secondary);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6;
+}
+
+.travel-assistance a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.travel-assistance a:hover {
+    color: var(--text-primary);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .registration-header {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+        padding: 0 1.25rem;
+        margin-bottom: 3rem;
+    }
+
+    .registration-title {
+        font-size: 2.5rem;
+    }
+
+    .guidelines-section {
+        margin-bottom: 3rem;
+    }
+
+    .dates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .date-card {
+        padding: 1.5rem;
+    }
+
+    .inclusions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .process-step {
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .step-content {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .visa-note {
+        padding: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    .travel-card {
+        padding: 1.5rem;
+    }
+
+    .travel-assistance {
+        margin-top: 3rem;
+    }
+}
+
+/* Guidelines List */
+.guidelines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.guidelines-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.item-number {
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    flex-shrink: 0;
+}
+
+.item-text {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--text-primary);
+}

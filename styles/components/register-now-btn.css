@@ -1,0 +1,65 @@
+/* Floating Register Now Button */
+.register-now-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.85rem 1.75rem;
+    background-color: var(--accent-gold);
+    color: #000000;
+    border: none;
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, filter 0.25s ease;
+}
+
+.register-now-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    filter: brightness(1.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(var(--accent-gold-rgb), 0.8),
+        0 0 35px rgba(var(--accent-gold-rgb), 0.6);
+}
+
+.register-now-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.register-now-btn i {
+    font-size: 1.15rem;
+    transition: transform 0.25s ease;
+}
+
+.register-now-btn:hover i {
+    transform: translate(2px, -2px);
+}
+
+@media (max-width: 768px) {
+    .register-now-btn {
+        bottom: 1.5rem;
+        right: 1.25rem;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+        backdrop-filter: blur(8px);
+        background-color: rgba(var(--accent-gold-rgb), 0.95);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .register-now-btn i {
+        font-size: 1rem;
+    }
+}

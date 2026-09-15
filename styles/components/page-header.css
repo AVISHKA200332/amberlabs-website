@@ -1,0 +1,27 @@
+.page-header {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: var(--bg-primary);
+}
+
+.page-header-title {
+    font-size: var(--section-title-size-mobile);
+    font-weight: var(--section-title-weight);
+    color: var(--section-title-color);
+    line-height: var(--section-title-line-height);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+@media (min-width: 992px) {
+    .page-header {
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+
+    .page-header-title {
+        font-size: var(--section-title-size-desktop);
+    }
+
+}

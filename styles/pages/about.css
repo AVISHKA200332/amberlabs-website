@@ -1,0 +1,125 @@
+.about-magazine-section {
+    background-color: var(--bg-primary);
+    padding: var(--section-padding-mobile);
+    color: var(--text-primary);
+}
+
+.magazine-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mag-top-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .mag-top-row {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+    }
+}
+
+.section-tag-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.tag-line {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-gold);
+}
+
+.section-tag {
+    color: var(--accent-gold);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mag-text-col h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+
+
+
+.mag-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.mag-bottom-row {
+    width: 100%;
+    padding-top: 10px;
+}
+
+.full-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.about-us-page .vision-mission-section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+@media (min-width: 992px) {
+    .about-us-page .vision-mission-section .container {
+        flex-direction: row;
+        gap: 80px;
+        align-items: flex-start;
+    }
+}
+
+.about-us-page .vm-block {
+    flex: 1;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .about-us-page .vm-block {
+        text-align: left;
+    }
+}
+
+.about-us-page .vm-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.about-us-page .vm-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+    .about-us-page .vm-text {
+        margin: 0;
+    }
+}

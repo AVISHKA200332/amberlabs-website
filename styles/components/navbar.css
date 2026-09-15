@@ -1,0 +1,151 @@
+.site-header {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-block: 2.5rem;
+}
+
+.navbar-toggler {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--accent-gold);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.navbar-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-primary);
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px var(--overlay-dark);
+
+    & li {
+        list-style: none;
+    }
+}
+
+.navbar-nav.active {
+    display: flex;
+}
+
+.navbar-brand {
+    width: 180px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--accent-gold);
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.user-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--accent-gold);
+    color: var(--accent-gold);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-icon:hover {
+    color: var(--bg-primary);
+    background-color: var(--accent-gold);
+    transform: scale(1.08);
+}
+
+/* Theme Toggle Button - Redesigned (Circular Rotating Morph) */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1.5px solid var(--accent-gold);
+    color: var(--accent-gold);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+    transform: scale(1.08);
+}
+
+.theme-toggle i {
+    position: absolute;
+    font-size: 1.35rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1;
+}
+
+/* Icon visibility and rotation logic */
+.theme-toggle .ri-sun-line {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.theme-toggle .ri-moon-line {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+/* Light Theme States */
+[data-theme="light"] .theme-toggle .ri-sun-line {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+[data-theme="light"] .theme-toggle .ri-moon-line {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+
+@media (min-width: 992px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-nav {
+        display: flex;
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+        flex-direction: row;
+        border-top: none;
+        box-shadow: none;
+        gap: 30px;
+    }
+
+    .navbar-brand {
+        width: 220px;
+    }
+}

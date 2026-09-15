@@ -1,0 +1,122 @@
+.image-presentation-section {
+    background: var(--bg-secondary);
+    padding: 2rem 0;
+}
+
+.section-info-btn {
+    margin-top: 1.5rem;
+    gap: 0.6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.presentation-actions {
+    margin-top: 3rem;
+}
+
+.presentation-content {
+    max-width: 900px;
+}
+
+.presentation-description {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.presentation-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.requirements-box,
+.example-box {
+    background: var(--bg-primary);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(var(--accent-gold-rgb), 0.1);
+}
+
+.requirements-box h3,
+.example-box h3 {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.requirements-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirements-box li {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    line-height: 1.5;
+}
+
+.requirements-box li i {
+    color: var(--accent-gold);
+    margin-top: 0.1rem;
+    font-size: 1.2rem;
+}
+
+.example-content p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.example-content p strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.submission-info {
+    text-align: left;
+    background: rgba(var(--accent-gold-rgb), 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(var(--accent-gold-rgb), 0.2);
+}
+
+.submission-info p {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.submission-info i {
+    color: var(--accent-gold);
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.submission-info a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.submission-info a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .presentation-details {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script>
+			(function () {
+				const stored = localStorage.getItem("theme");
+				const prefersDark = window.matchMedia(
+					"(prefers-color-scheme: dark)",
+				).matches;
+				const theme = stored || (prefersDark ? "dark" : "light");
+				document.documentElement.dataset.theme = theme;
+			})();
+		</script><meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/png" href="/img/Amber%20Logo-08.png">
+		<link rel="stylesheet" href="/styles/index.css">
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+		<title>Experience Sri Lanka | ICFIRE 2026 | Amber Laboratory</title>
+		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script><script>(function(){const showLoader = false;
+
+			if (showLoader && sessionStorage.getItem("HasVisited") === "true") {
+				document.documentElement.classList.add("loader-hidden");
+			}
+		})();</script><style>.person-card[data-astro-cid-rvbyvrvq] {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  gap: 2rem;
+}
+
+.person-card[data-astro-cid-rvbyvrvq]:last-child {
+  border-bottom: none;
+}
+
+.person-image[data-astro-cid-rvbyvrvq] {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.person-image[data-astro-cid-rvbyvrvq] img[data-astro-cid-rvbyvrvq] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-info[data-astro-cid-rvbyvrvq] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.person-name[data-astro-cid-rvbyvrvq] {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.person-affiliation[data-astro-cid-rvbyvrvq] {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+@media (width <= 640px) {
+  .person-info[data-astro-cid-rvbyvrvq] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+  }
+
+  .person-affiliation[data-astro-cid-rvbyvrvq] {
+    text-align: left;
+  }
+}
+.banner-btn[data-astro-cid-bg5i3ujf] {
+  box-shadow: 0 10px 20px #0000004d;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  text-decoration: none;
+  background-color: var(--accent-gold) !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  transition: all .3s !important;
+}
+
+.banner-btn[data-astro-cid-bg5i3ujf]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px #00000080;
+  background-color: #fff !important;
+}
+
+@media (width >= 992px) {
+  .banner-btn[data-astro-cid-bg5i3ujf] {
+    padding: 1rem 2.5rem !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (width <= 768px) {
+  .banner-btn[data-astro-cid-bg5i3ujf] {
+    font-size: .85rem !important;
+    padding: .6rem 1.2rem !important;
+  }
+}
+
+@media (width <= 480px) {
+  .banner-btn[data-astro-cid-bg5i3ujf] {
+    font-size: .75rem !important;
+    padding: .4rem .8rem !important;
+  }
+}
+/*$vite$:1*/</style></head>
+	<body>
+		
+
+		<div class="cursor-dot"></div>
+		<div class="cursor-ring"></div>
+
+		<header class="site-header">
+    <nav class="container navbar">
+        <a href="/" class="navbar-brand">
+            <img src="/img/logo.png" alt="Amber Laboratory Logo" class="logo-dark">
+            <img src="/img/logo-dark.png" alt="Amber Laboratory Logo" class="logo-light">
+        </a>
+
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+            <i class="ri-menu-3-fill"></i>
+        </button>
+
+        <ul class="navbar-nav" id="navbar-menu">
+            <li>
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li>
+                <a href="/about-us" class="nav-link">About Us</a>
+            </li>
+            <li>
+                <a href="/services" class="nav-link">Services</a>
+            </li>
+            <li>
+                <a href="/consultancy" class="nav-link">Consultancy</a>
+            </li>
+            <li>
+                <a href="/conference" class="nav-link">News & Blog</a>
+            </li>
+            <li>
+                <a href="/contact-us" class="nav-link">Contact</a>
+            </li>
+            <li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="ri-sun-line"></i>
+                    <i class="ri-moon-line"></i>
+                </button>
+            </li>
+            <li>
+                <a href="/login" class="nav-link">
+                    <i class="ri-user-line user-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script type="module">//#region src/components/shared/Navbar.astro?astro&type=script&index=0&lang.ts
+document.getElementById("theme-toggle")?.addEventListener("click", () => {
+	const next = (document.documentElement.dataset.theme || "dark") === "dark" ? "light" : "dark";
+	document.documentElement.dataset.theme = next;
+	localStorage.setItem("theme", next);
+});
+var menuToggle = document.getElementById("menu-toggle");
+var navbarMenu = document.getElementById("navbar-menu");
+menuToggle?.addEventListener("click", () => {
+	navbarMenu?.classList.toggle("active");
+	const icon = menuToggle.querySelector("i");
+	if (navbarMenu?.classList.contains("active")) icon?.classList.replace("ri-menu-3-fill", "ri-close-line");
+	else icon?.classList.replace("ri-close-line", "ri-menu-3-fill");
+});
+//#endregion</script>
+
+		<main>
+			
+    <section>
+        <div class="container main-content">
+            <a href="/conference#quick-links" class="back-btn anim-hidden">
+                <i class="ri-arrow-left-line"></i> Back to Conference
+            </a>
+
+            <header class="registration-header anim-hidden">
+                <h1 class="registration-title">Experience Sri Lanka</h1>
+            </header>
+
+            <link rel="stylesheet" href="/styles/pages/experience-sri-lanka.css">
+
+            <div class="experience-intro-text anim-hidden">
+                <p>
+                    Where knowledge connects with culture, heritage, and nature.
+                    Participating in ICFIRE 2026 is more than a professional
+                    engagement; it is also a chance to discover one of the
+                    world’s most captivating destinations, celebrated for its
+                    remarkable fusion of culture, natural beauty, and adventure
+                </p>
+                <p>
+                    Sri Lanka presents a unique blend of contemporary living,
+                    rich traditions, ancient heritage sites, sacred temples,
+                    coastal beaches, wildlife safaris, scenic landscapes, and
+                    warm hospitality, all conveniently accessible within short
+                    travel distances.
+                </p>
+            </div>
+
+            <!-- Section 1 Colombo - The Host City -->
+            <div class="experience-item-section anim-hidden">
+                <h2 class="experience-section-title">
+                    Colombo – The Host City
+                </h2>
+                <div class="experience-image-gallery">
+                    <div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/colombo-5.webp" alt="Colombo View 5">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/colombo-1.webp" alt="Colombo View 1">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/colombo-2.webp" alt="Colombo View 2">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/colombo-3.webp" alt="Colombo View 3">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/colombo-4.webp" alt="Colombo View 4">
+                            </div>
+                </div>
+            </div>
+
+            <!-- Section 2 Cultural & Heritage Experiences -->
+            <div class="experience-item-section anim-hidden">
+                <h2 class="experience-section-title">
+                    Cultural & Heritage Experiences
+                </h2>
+                <div class="experience-image-gallery">
+                    <div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-1.webp" alt="Cultural Heritage 1">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-2.webp" alt="Cultural Heritage 2">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-3.webp" alt="Cultural Heritage 3">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-4.webp" alt="Cultural Heritage 4">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-5.webp" alt="Cultural Heritage 5">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-6.webp" alt="Cultural Heritage 6">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-7.webp" alt="Cultural Heritage 7">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-8.webp" alt="Cultural Heritage 8">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/cultural-&amp;-heritage-9.webp" alt="Cultural Heritage 9">
+                            </div>
+                </div>
+            </div>
+
+            <!-- Section 3 Nature & Wildlife Adventures -->
+            <div class="experience-item-section anim-hidden">
+                <h2 class="experience-section-title">
+                    Nature & Wildlife Adventures
+                </h2>
+                <div class="experience-image-gallery">
+                    <div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/nature-&amp;-wildlife-1.webp" alt="Nature &amp; Wildlife 1">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/nature-&amp;-wildlife-2.webp" alt="Nature &amp; Wildlife 2">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/nature-&amp;-wildlife-3.webp" alt="Nature &amp; Wildlife 3">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/nature-&amp;-wildlife-4.webp" alt="Nature &amp; Wildlife 4">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/nature-&amp;-wildlife-5.webp" alt="Nature &amp; Wildlife 5">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/nature-&amp;-wildlife-6.webp" alt="Nature &amp; Wildlife 6">
+                            </div><div class="experience-gallery-item anim-hidden">
+                                <img src="/img/conference/nature-&amp;-wildlife-7.webp" alt="Nature &amp; Wildlife 7">
+                            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const { animate, stagger } = Motion;
+        const duration = 0.8;
+        const easing = [0.16, 1, 0.3, 1];
+
+        animate(
+            ".back-btn, .registration-header",
+            { opacity: [0, 1], y: [20, 0] },
+            { duration, easing, delay: 0.2 },
+        );
+
+        animate(
+            ".experience-intro-text",
+            { opacity: [0, 1], y: [20, 0] },
+            { duration, easing, delay: 0.4 },
+        );
+
+        animate(
+            ".experience-item-section",
+            { opacity: [0, 1], y: [30, 0] },
+            {
+                duration: 1,
+                easing,
+                delay: stagger(0.2, { startDelay: 0.6 }),
+            },
+        );
+
+        // Animate Gallery Items
+        animate(
+            ".experience-gallery-item",
+            { opacity: [0, 1] },
+            {
+                duration: 0.8,
+                easing,
+                delay: stagger(0.1, { startDelay: 1 }),
+            },
+        );
+    </script><a href="https://docs.google.com/forms/d/e/1FAIpQLSdjpbCupWJsTEXnoET6W1dttovymbNh8ygCJCVaO-_Oapgi6A/viewform?usp=heade" class="btn register-now-btn" target="_blank" rel="noopener noreferrer">
+            
+    Register Now
+    <i class="ri-arrow-right-up-line"></i>
+
+        </a>
+
+		</main>
+
+		<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col logo-col">
+        <a href="/" class="footer-logo-link">
+          <img src="/img/footer-logo.png" alt="Amber Laboratory" class="footer-logo logo-dark">
+          <img src="/img/footer-logo-dark.png" alt="Amber Laboratory" class="footer-logo logo-light">
+        </a>
+        <p class="footer-company-name">Amber Laboratory (Pvt) Ltd</p>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <i class="ri-phone-fill"></i>
+            <a href="tel:+94705401900">+94 70 540 1900</a>
+          </li>
+          <li>
+            <i class="ri-mail-line"></i>
+            <a href="mailto: info@amber-laboratory.com">
+              info@amber-laboratory.com</a>
+          </li>
+          <li>
+            <i class="ri-map-pin-line"></i>
+            <span>399/8 Colvin Perera Mawatha, Samagi Mawatha, Hokandara South,
+              Hokandara.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h3>Stay Updated!</h3>
+        <form class="newsletter-form" action="#" method="POST">
+          <input type="email" placeholder="Your Email Address..." required>
+          <button type="submit" aria-label="Subscribe">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </form>
+
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="#" aria-label="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-middle">
+      <a href="/careers" class="gold-link">Careers</a>
+      <a href="/conference" class="gold-link">Conference</a>
+      <a href="/testing-portal" class="gold-link">Testing Portal</a>
+      <a href="/student-portal" class="gold-link">Student Portal</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/contact-us">Contact Us</a>
+      </div>
+      <p class="copyright-text">
+        &copy; 2026 Ardent Hive, All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+		<script>
+			(function () {
+				if (window.__cursorInitialized) return;
+				
+				// Disable custom cursor script on touch devices
+				if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+					return;
+				}
+
+				window.__cursorInitialized = true;
+
+				let dot, ring;
+				let mouseX = 0,
+					mouseY = 0;
+				let ringX = 0,
+					ringY = 0;
+				let animationId = null;
+
+				const interactiveSelector =
+					'a, button, input, textarea, select, [role="button"], [onclick], label, .btn';
+
+				function updatePosition() {
+					if (!dot || !ring) {
+						dot = document.querySelector(".cursor-dot");
+						ring = document.querySelector(".cursor-ring");
+					}
+
+					if (dot && ring) {
+						dot.style.left = mouseX + "px";
+						dot.style.top = mouseY + "px";
+
+						ringX += (mouseX - ringX) * 0.15;
+						ringY += (mouseY - ringY) * 0.15;
+						ring.style.left = ringX + "px";
+						ring.style.top = ringY + "px";
+					}
+
+					animationId = requestAnimationFrame(updatePosition);
+				}
+
+				function onMouseMove(e) {
+					mouseX = e.clientX;
+					mouseY = e.clientY;
+				}
+
+				function showCursor() {
+					document.body.classList.add("cursor-visible");
+				}
+
+				function hideCursor() {
+					document.body.classList.remove("cursor-visible");
+				}
+
+				function addHover() {
+					document.body.classList.add("cursor-hover");
+				}
+
+				function removeHover() {
+					document.body.classList.remove("cursor-hover");
+				}
+
+				function addActive() {
+					document.body.classList.add("cursor-active");
+				}
+
+				function removeActive() {
+					document.body.classList.remove("cursor-active");
+				}
+
+				function attachHoverListeners() {
+					document
+						.querySelectorAll(interactiveSelector)
+						.forEach((el) => {
+							// Remove first to prevent duplicates
+							el.removeEventListener("mouseenter", addHover);
+							el.removeEventListener("mouseleave", removeHover);
+							el.addEventListener("mouseenter", addHover);
+							el.addEventListener("mouseleave", removeHover);
+						});
+				}
+
+				function initCursor() {
+					dot = document.querySelector(".cursor-dot");
+					ring = document.querySelector(".cursor-ring");
+
+					if (!dot || !ring) return;
+
+					attachHoverListeners();
+
+					if (document.hasFocus()) {
+						showCursor();
+					}
+				}
+
+				document.addEventListener("mousemove", onMouseMove);
+				document.addEventListener("mouseenter", showCursor);
+				document.addEventListener("mouseleave", hideCursor);
+				document.addEventListener("mousedown", addActive);
+				document.addEventListener("mouseup", removeActive);
+				window.addEventListener("blur", hideCursor);
+				window.addEventListener("focus", showCursor);
+
+				updatePosition();
+
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", initCursor);
+				} else {
+					initCursor();
+				}
+
+				document.addEventListener("astro:page-load", initCursor);
+				document.addEventListener("astro:after-swap", initCursor);
+			})();
+		</script>
+	</body>
+</html>

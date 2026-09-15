@@ -1,0 +1,46 @@
+/* Shared Form Styles */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dimmed);
+    font-size: 1.25rem;
+    pointer-events: none;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.submit-btn {
+    background-color: var(--accent-gold);
+    color: #000000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}

@@ -15,73 +15,14 @@
 		<link rel="icon" type="image/png" href="/img/Amber%20Logo-08.png">
 		<link rel="stylesheet" href="/styles/index.css">
 		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
-		<title>News &amp; Blog | Amber Laboratory</title>
+		<title>ICFIRE 2026 Proceedings | Amber Laboratory</title>
+		<meta name="description" content="Proceedings of the International Conference on Fire Safety and Resilience of the Built Environment – ICFIRE 2026, held at BMICH, Colombo, Sri Lanka.">
 		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script><script>(function(){const showLoader = false;
 
-			if (showLoader && sessionStorage.getItem("HasVisited") === "true") {
-				document.documentElement.classList.add("loader-hidden");
-			}
-		})();</script><style>.person-card[data-astro-cid-rvbyvrvq] {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border-color);
-  gap: 2rem;
-}
-
-.person-card[data-astro-cid-rvbyvrvq]:last-child {
-  border-bottom: none;
-}
-
-.person-image[data-astro-cid-rvbyvrvq] {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.person-image[data-astro-cid-rvbyvrvq] img[data-astro-cid-rvbyvrvq] {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.person-info[data-astro-cid-rvbyvrvq] {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 1rem;
-}
-
-.person-name[data-astro-cid-rvbyvrvq] {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.person-affiliation[data-astro-cid-rvbyvrvq] {
-  margin: 0;
-  font-size: .95rem;
-  color: var(--text-muted);
-  text-align: right;
-}
-
-@media (width <= 640px) {
-  .person-info[data-astro-cid-rvbyvrvq] {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: .25rem;
-  }
-
-  .person-affiliation[data-astro-cid-rvbyvrvq] {
-    text-align: left;
-  }
-}
-/*$vite$:1*/</style></head>
+		if (showLoader && sessionStorage.getItem("HasVisited") === "true") {
+			document.documentElement.classList.add("loader-hidden");
+		}
+	})();</script></head>
 	<body>
 		<div class="cursor-dot"></div>
 		<div class="cursor-ring"></div>
@@ -111,7 +52,7 @@
                 <a href="/consultancy" class="nav-link">Consultancy</a>
             </li>
             <li>
-                <a href="/conference" class="nav-link">News & Blog</a>
+                <a href="/conference" class="nav-link">News &amp; Blog</a>
             </li>
             <li>
                 <a href="/contact-us" class="nav-link">Contact</a>
@@ -131,7 +72,7 @@
     </nav>
 </header>
 
-<script type="module">//#region src/components/shared/Navbar.astro?astro&type=script&index=0&lang.ts
+<script type="module">
 document.getElementById("theme-toggle")?.addEventListener("click", () => {
 	const next = (document.documentElement.dataset.theme || "dark") === "dark" ? "light" : "dark";
 	document.documentElement.dataset.theme = next;
@@ -145,89 +86,138 @@ menuToggle?.addEventListener("click", () => {
 	if (navbarMenu?.classList.contains("active")) icon?.classList.replace("ri-menu-3-fill", "ri-close-line");
 	else icon?.classList.replace("ri-close-line", "ri-menu-3-fill");
 });
-//#endregion</script>
+</script>
 
 		<main>
-			<!-- ============================================================
-			     NEWS & BLOG â€” CARD LISTING
-			     Three cards: ICFIRE Event | ICFIRE Proceedings | WAITRO
-			     ============================================================ -->
-			<section class="news-listing-section">
+			<!-- Back breadcrumb -->
+			<div class="article-back-bar">
 				<div class="container">
-					<div class="news-listing-header">
-						<h1 class="news-listing-title">News &amp; Blog</h1>
-						<p class="news-listing-subtitle">Latest news, publications and announcements from Amber Laboratory.</p>
+					<a href="/conference" class="article-back-link">
+						<i class="ri-arrow-left-s-line"></i> Back to News &amp; Blog
+					</a>
+				</div>
+			</div>
+
+			<section class="news-article-hero">
+				<div class="container">
+					<div class="news-article-kicker anim-hidden">News &amp; Blog</div>
+					<div class="news-article-header">
+						<h1 class="news-article-title anim-hidden">
+							ICFIRE 2026 Proceedings
+						</h1>
+						<p class="news-article-intro anim-hidden">
+							We are pleased to announce the publication of the Proceedings of the International Conference on Fire Safety and Resilience of the Built Environment – ICFIRE 2026, held on 22–23 July 2026 at BMICH, Colombo, Sri Lanka.
+						</p>
 					</div>
+					<div class="news-article-meta anim-hidden">
+						<span><i class="ri-book-open-line"></i> Publication</span>
+						<span><i class="ri-calendar-event-line"></i> 22-23 July 2026</span>
+						<span><i class="ri-map-pin-2-line"></i> BMICH, Colombo</span>
+					</div>
+					<figure class="news-hero-image anim-hidden">
+						<a href="/docs/ICFIRE-2026-Proceedings.pdf" target="_blank" download aria-label="Download ICFIRE 2026 Proceedings PDF">
+							<img src="/img/icfire-proceedings-cover.png" alt="Cover of the ICFIRE 2026 Proceedings">
+						</a>
+					</figure>
+				</div>
+			</section>
 
-					<div class="articles-grid">
+			<section class="news-article-section">
+				<div class="container news-article-layout">
+					<aside class="news-article-sidebar anim-hidden" aria-label="Article highlights">
+						<div class="news-fact">
+							<span class="news-fact-label">Theme</span>
+							<strong>Advancing Fire-Resilient Materials and Systems</strong>
+						</div>
+						<div class="news-fact">
+							<span class="news-fact-label">Organizers</span>
+							<strong>Amber Laboratory, SFPE Sri Lanka &amp; University of Moratuwa</strong>
+						</div>
+						<div class="news-fact">
+							<span class="news-fact-label">Keynote Speaker</span>
+							<strong>Prof. Priyan Mendis, University of Melbourne</strong>
+						</div>
+						<div class="news-fact">
+							<span class="news-fact-label">Format</span>
+							<strong>Official Proceedings (PDF)</strong>
+						</div>
+					</aside>
 
-						<!-- â”€â”€â”€ CARD 1 â€” ICFIRE 2026 EVENT RECAP â”€â”€â”€ -->
-						<article class="news-card">
-							<div class="card-img-wrapper">
-								<img
-									src="/ICFIRE%202026%20Images/1.jpg"
-									alt="ICFIRE 2026 international conference held at BMICH, Colombo"
-									loading="lazy">
-							</div>
-							<div class="card-content">
-								<div class="meta-info">
-									<span><i class="ri-calendar-event-line"></i> 22-23 July 2026</span>
-									<span>Event Recap</span>
-								</div>
-								<h2 class="news-card-title">ICFIRE 2026 Successfully Held in Colombo</h2>
-								<p>Amber Laboratory marked an important milestone for Sri Lanka's fire-safety sector with a two-day international gathering at BMICH, bringing together leading experts, researchers and industry professionals.</p>
-								<a href="/conference/icfire-2026-colombo/" class="card-link">
-									Read Full Article <i class="ri-arrow-right-s-line"></i>
+					<article class="news-article-body">
+						<p class="anim-hidden">
+							We are pleased to announce the publication of the Proceedings of the International Conference on Fire Safety and Resilience of the Built Environment &ndash; ICFIRE 2026, held on 22&ndash;23 July 2026 at BMICH, Colombo, Sri Lanka.
+						</p>
+						<p class="anim-hidden">
+							Organized by Amber Laboratory (Pvt) Ltd., the Society of Fire Protection Engineers (SFPE) Sri Lanka Chapter, and the University of Moratuwa, ICFIRE 2026 was held under the theme &ldquo;Advancing Fire-Resilient Materials and Systems for Future-Proofing Sustainable Built Environments.&rdquo;
+						</p>
+						<p class="anim-hidden">
+							The ICFIRE 2026 Proceedings bring together the abstracts of the technical contributions presented by leading international and local experts. It covers a diverse range of fire-safety topics, including performance-based fire safety engineering, structural fire engineering, fire dynamics and smoke movement, fire-resistant materials, research and innovations, artificial intelligence in fire safety, passive fire protection testing and compliance, fire safety regulations and standards, computational modelling, Battery Energy Storage Systems (BESS) and Electric Vehicles (EVs), artificial intelligence and IoT applications in fire protection, fa&ccedil;ade fire safety, and forensic fire investigation.
+						</p>
+						<p class="anim-hidden">
+							The proceedings also feature the keynote presentation by Prof. Priyan Mendis of the University of Melbourne, titled &ldquo;Fire Engineering and Design: Emerging Trends in Performance Testing and Compliance&rdquo;.
+						</p>
+						<p class="anim-hidden">
+							This publication serves as a valuable reference for fire-safety professionals, engineers, architects, researchers, academics, policymakers, regulators and industry stakeholders, while preserving and sharing the knowledge exchanged during ICFIRE 2026.
+						</p>
+						<p class="anim-hidden">
+							Through the publication of these proceedings, Amber Laboratory continues its commitment to advancing fire-safety research, technical knowledge, professional collaboration and the development of safer and more resilient and sustainable built environments.
+						</p>
+						<p class="anim-hidden">
+							Explore the ICFIRE 2026 Proceedings and discover the research, technical insights, and professional perspectives presented at this international conference.
+						</p>
+
+						<!-- Proceedings Download Box -->
+						<div class="article-proceedings-box anim-hidden">
+							<div class="proceedings-box-inner">
+								<a
+									href="/docs/ICFIRE-2026-Proceedings.pdf"
+									target="_blank"
+									download
+									class="proceedings-cover-link"
+									aria-label="Download ICFIRE 2026 Proceedings PDF">
+									<img
+										src="/img/icfire-proceedings-cover.png"
+										alt="Cover of the ICFIRE 2026 Proceedings"
+										class="proceedings-cover-img">
+								</a>
+								<p class="proceedings-download-hint">
+									<i class="ri-mouse-line"></i> Click the cover to access the full proceedings.
+								</p>
+								<a
+									href="/docs/ICFIRE-2026-Proceedings.pdf"
+									target="_blank"
+									download
+									class="btn proceedings-download-btn">
+									<i class="ri-download-2-line"></i> Download ICFIRE 2026 Proceedings
 								</a>
 							</div>
-						</article>
+						</div>
 
-						<!-- ─── CARD 2 — ICFIRE 2026 PROCEEDINGS ─── -->
-						<article class="news-card">
-							<div class="card-img-wrapper">
-								<img
-									src="/img/icfire-proceedings-cover.png"
-									alt="Cover of the ICFIRE 2026 Proceedings"
-									loading="lazy">
-							</div>
-							<div class="card-content">
-								<div class="meta-info">
-									<span><i class="ri-calendar-event-line"></i> 22-23 July 2026</span>
-									<span>Publication</span>
-								</div>
-								<h2 class="news-card-title">ICFIRE 2026 Proceedings</h2>
-								<p>We are pleased to announce the publication of the Proceedings of the International Conference on Fire Safety and Resilience of the Built Environment &ndash; ICFIRE 2026, held on 22&ndash;23 July 2026 at BMICH, Colombo, Sri Lanka.</p>
-								<a href="/conference/icfire-2026-proceedings/" class="card-link">
-									Read Full Article <i class="ri-arrow-right-s-line"></i>
-								</a>
-							</div>
-						</article>
+					</article>
+				</div>
+			</section>
 
-						<!-- ─── CARD 3 — WAITRO MEMBERSHIP ─── -->
-						<article class="news-card">
-							<div class="card-img-wrapper">
-								<img
-									src="/img/Cover%20Image%20of%20WAITRO%20membership%20-external%20box.png"
-									alt="Amber Laboratory Joins the WAITRO Global Innovation Family"
-									loading="lazy">
-							</div>
-							<div class="card-content">
-								<div class="meta-info">
-									<span><i class="ri-calendar-event-line"></i> 2026</span>
-									<span>Membership</span>
-								</div>
-								<h2 class="news-card-title">Amber Laboratory Joins the WAITRO Global Innovation Family</h2>
-								<p>We are pleased to announce that Amber Laboratory has officially joined the World Association of Industrial and Technological Research Organizations (WAITRO) as an Associate Member in 2026.</p>
-								<a href="/conference/waitro-membership-2026/" class="card-link">
-									Read Full Article <i class="ri-arrow-right-s-line"></i>
-								</a>
-							</div>
-						</article>
+			<script>
+				const { animate, inView, stagger } = Motion;
 
-					</div><!-- /.articles-grid -->
-				</div><!-- /.container -->
-			</section><!-- /.news-listing-section -->
+				animate(
+					".news-article-kicker, .news-article-title, .news-article-intro, .news-article-meta, .news-hero-image",
+					{ opacity: [0, 1], y: [24, 0] },
+					{ duration: 0.9, easing: "ease-out", delay: stagger(0.12) },
+				);
 
+				inView(
+					".news-article-section",
+					() => {
+						animate(
+							".news-article-sidebar, .news-article-body .anim-hidden",
+							{ opacity: [0, 1], y: [22, 0] },
+							{ duration: 0.8, easing: "ease-out", delay: stagger(0.08) },
+						);
+					},
+					{ amount: 0.12 },
+				);
+			</script>
 		</main>
 
 		<footer class="site-footer">
@@ -373,7 +363,6 @@ menuToggle?.addEventListener("click", () => {
 					document
 						.querySelectorAll(interactiveSelector)
 						.forEach((el) => {
-							// Remove first to prevent duplicates
 							el.removeEventListener("mouseenter", addHover);
 							el.removeEventListener("mouseleave", removeHover);
 							el.addEventListener("mouseenter", addHover);

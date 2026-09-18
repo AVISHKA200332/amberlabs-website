@@ -319,7 +319,7 @@ menuToggle?.addEventListener("click", () => {
 				let animationId = null;
 
 				const interactiveSelector =
-					'a, button, input, textarea, select, [role="button"], [onclick], label, .btn';
+					'a, button, input, textarea, select, [role="button"], [onclick], label, .btn, .news-card';
 
 				function updatePosition() {
 					if (!dot || !ring) {
@@ -381,6 +381,21 @@ menuToggle?.addEventListener("click", () => {
 						});
 				}
 
+				function initCardClicks() {
+					document.querySelectorAll(".news-card").forEach((card) => {
+						if (card.dataset.hasCardClick) return;
+						card.dataset.hasCardClick = "true";
+						card.addEventListener("click", (e) => {
+							if (!e.target.closest("a")) {
+								const link = card.querySelector(".card-link");
+								if (link && link.href) {
+									window.location.href = link.href;
+								}
+							}
+						});
+					});
+				}
+
 				function initCursor() {
 					dot = document.querySelector(".cursor-dot");
 					ring = document.querySelector(".cursor-ring");
@@ -404,14 +419,19 @@ menuToggle?.addEventListener("click", () => {
 
 				updatePosition();
 
-				if (document.readyState === "loading") {
-					document.addEventListener("DOMContentLoaded", initCursor);
-				} else {
+				function initialize() {
 					initCursor();
+					initCardClicks();
 				}
 
-				document.addEventListener("astro:page-load", initCursor);
-				document.addEventListener("astro:after-swap", initCursor);
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", initialize);
+				} else {
+					initialize();
+				}
+
+				document.addEventListener("astro:page-load", initialize);
+				document.addEventListener("astro:after-swap", initialize);
 			})();
 		</script>
 	</body>

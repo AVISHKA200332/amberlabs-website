@@ -114,29 +114,17 @@ menuToggle?.addEventListener("click", () => {
 						<span><i class="ri-award-line"></i> Associate Member</span>
 						<span><i class="ri-calendar-event-line"></i> 2026</span>
 					</div>
+					<figure class="news-hero-image news-hero-image--contain anim-hidden">
+						<img src="/img/waitro-membership-certificate.jpg" alt="Official WAITRO Associate Membership Certificate – Amber Laboratory (2026)">
+						<figcaption class="waitro-cert-caption">
+							<a href="https://waitro.org/members/" target="_blank" rel="noopener noreferrer">Official WAITRO Associate Membership Certificate &ndash; Amber Laboratory (2026)</a>
+						</figcaption>
+					</figure>
 				</div>
 			</section>
 
 			<section class="news-article-section">
-				<div class="container news-article-layout">
-					<aside class="news-article-sidebar anim-hidden" aria-label="Article highlights">
-						<div class="news-fact">
-							<span class="news-fact-label">Organization</span>
-							<strong>WAITRO</strong>
-						</div>
-						<div class="news-fact">
-							<span class="news-fact-label">Full Name</span>
-							<strong>World Association of Industrial and Technological Research Organizations</strong>
-						</div>
-						<div class="news-fact">
-							<span class="news-fact-label">Membership Status</span>
-							<strong>Associate Member (2026)</strong>
-						</div>
-						<div class="news-fact">
-							<span class="news-fact-label">Global Reach</span>
-							<strong>190+ RTOs across 80+ countries</strong>
-						</div>
-					</aside>
+				<div class="container news-article-layout news-article-layout--full">
 
 					<article class="news-article-body">
 						<p class="anim-hidden">
@@ -145,17 +133,6 @@ menuToggle?.addEventListener("click", () => {
 						<p class="anim-hidden">
 							This membership marks an important milestone in Amber Laboratory&rsquo;s journey toward strengthening international collaboration and expanding its engagement with the global research and innovation community.
 						</p>
-
-						<!-- WAITRO Branding & Logo Presentation -->
-						<div class="waitro-brand-presentation anim-hidden">
-							<div class="waitro-logo-card">
-								<img
-									src="/img/waitro-logo.png"
-									alt="World Association of Industrial and Technological Research Organizations (WAITRO) Logo"
-									class="waitro-brand-logo">
-								<span class="waitro-brand-caption">World Association of Industrial and Technological Research Organizations</span>
-							</div>
-						</div>
 
 						<p class="anim-hidden">
 							As part of WAITRO, Amber Laboratory joins a network of more than 190 research and technology organizations, universities, and industries across over 80 countries.
@@ -167,16 +144,7 @@ menuToggle?.addEventListener("click", () => {
 							This new partnership further strengthens Amber Laboratory&rsquo;s commitment to advancing technology, research, innovation, and sustainable development while connecting local expertise with the global research community.
 						</p>
 
-						<!-- WAITRO Certificate Showcase -->
-						<div class="waitro-cert-showcase anim-hidden">
-							<figure class="waitro-cert-figure">
-								<img
-									src="/img/waitro-membership-certificate.jpg"
-									alt="WAITRO Associate Membership Certificate 2026 granted to Amber Laboratory"
-									class="waitro-cert-img">
-								<figcaption class="waitro-cert-caption">Official WAITRO Associate Membership Certificate &ndash; Amber Laboratory (2026)</figcaption>
-							</figure>
-						</div>
+
 
 						<!-- Professional External CTA -->
 						<div class="article-cta-box anim-hidden">
@@ -197,7 +165,7 @@ menuToggle?.addEventListener("click", () => {
 				const { animate, inView, stagger } = Motion;
 
 				animate(
-					".news-article-kicker, .news-article-title, .news-article-intro, .news-article-meta",
+					".news-article-kicker, .news-article-title, .news-article-intro, .news-article-meta, .news-hero-image",
 					{ opacity: [0, 1], y: [24, 0] },
 					{ duration: 0.9, easing: "ease-out", delay: stagger(0.12) },
 				);
